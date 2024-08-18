@@ -1,5 +1,5 @@
 <template>
-  <div class="header" :class="{hidden: getIsHeader==='N'}">
+  <div class="header" :class="{hidden: !hasHeader}">
     <div class="topnav">
       <div class="goods-wrap">
         <img src="../assets/logo.png"/>
@@ -7,33 +7,43 @@
       </div>
       <div class="goods-wrap">
         <img src="../assets/logo.png" height="20" width="auto"/>
-        <span>{{ mileage }}</span>
+        <span>{{ mPoint }}</span>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import {computed, ref} from "vue";
-import store from "@/store/index";
+import {ref} from "vue";
+import {useRoute} from "vue-router";
+import store from "@/store";
 
 export default {
   name: "Header",
   props: {
+
   },
   setup() {
-    const mileage = ref(localStorage.getItem('mileage') ? localStorage.getItem('mileage') : 0)
+    const hasHeader = ref(true)
 
-    const getIsHeader = computed(() => {
-      return store.state.isHeader
-    })
+
+    const hasHeaderList = [
+      '/',
+      '/storage',
+      '/draw',
+    ]
+
+    const mPoint = ref(localStorage.getItem('mPoint') ? localStorage.getItem('mPoint') : 0)
+
+    hasHeader.value = hasHeaderList.includes(useRoute().fullPath);
+    store.commit('setMPoint', mPoint)
 
     return {
       //변수
-      mileage,
+      mPoint,
+      hasHeader
 
       //함수
-      getIsHeader,
 
     }
   },
@@ -45,7 +55,7 @@ export default {
   z-index: 10000;
   top: 3%;
   width: 100%;
-  position: absolute;
+  position: fixed;
   margin: 0;
   display: flex;
   justify-content: center;

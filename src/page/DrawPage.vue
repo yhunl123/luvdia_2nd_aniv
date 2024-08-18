@@ -16,26 +16,7 @@
         현재 뽑기 횟수: <span id="pull-count">{{ pullCount }}</span>회
       </div>
     </div>
-    <div class="comp">
-      <swiper
-          class="swiper"
-          :slides-per-view="1"
-          :slides-per-group="1"
-          :space-between="50"
-          @swiper="onSwiper"
-          @slideChange="onSlideChange"
-          loop
-          autoplay
-          direction="horizontal"
-      >
-        <swiper-slide>
-          <img class="swipe-img" src="@/assets/img/메이드%20메이%20투명.png" alt="" style="">
-        </swiper-slide>
-        <swiper-slide>
-          <img class="swipe-img" src="@/assets/img/힘든%20양메이.png" alt="">
-        </swiper-slide>
-      </swiper>
-    </div>
+
   </div>
 </template>
 
@@ -45,6 +26,7 @@ import {Swiper, SwiperSlide} from "swiper/vue";
 
 import 'swiper/css/bundle';
 import {ref} from "vue";
+import store from "@/store";
 
 export default {
   name: "MainPage",
@@ -58,6 +40,10 @@ export default {
     const gachaPage = (num) => {
       localStorage.setItem('gCount', num)
       localStorage.setItem('tCount', Number(pullCount.value) + num)
+
+      let mPoint = Number(store.state.mPoint) + Number(num)
+      localStorage.setItem('mPoint', mPoint)
+      store.commit('setMPoint', mPoint)
 
       router.push('effect')
     }
@@ -86,6 +72,11 @@ export default {
 </script>
 
 <style scoped>
+.wrap {
+  display: flex;
+  justify-content: center;
+}
+
 .bg-img {
   width: 100%;
   height: 100vh;
@@ -99,14 +90,10 @@ export default {
   width: 100%;
   max-width: 500px;
   position: absolute;
-  z-index: 5;
-  left: 35.7%;
-  top: 60%;
-}
-
-.comp {
-  position: relative;
-  width: 2000px;
+  z-index: 2;
+  top: 50%;
+  display: flex;
+  flex-direction: column;
 }
 
 h1 {

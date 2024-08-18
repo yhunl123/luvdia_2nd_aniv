@@ -2,23 +2,44 @@ import {createStore} from "vuex";
 
 const store = createStore({
     state: {
-        isHeader: 'Y',
-        isFooter: 'Y',
+        modalTitle: '',
+        modalMessage: '',
+        modalIsOpen: false,
+        isConfirmModal: false,
+        mPoint: 0,
     },
     getters: {
-        isHeader(state) {
-            return state.isHeader;
+        modalTitle(state) {
+            return state.modalTitle;
         },
-        isFooter(state) {
-            return state.isFooter;
+        modalMessage(state) {
+            return state.modalMessage;
+        },
+        modalIsOpen(state) {
+            return state.modalIsOpen;
+        },
+        isConfirmModal(state) {
+            return state.isConfirmModal;
+        },
+        mPoint(state) {
+            return state.mPoint;
         }
     },
     mutations: {
-        setIsHeader(state, value) {
-            state.isHeader = value;
+        setModalTitle(state, value) {
+            state.modalTitle = value;
         },
-        setIsFooter(state, value) {
-            state.isFooter = value;
+        setModalMessage(state, value) {
+            state.modalMessage = value;
+        },
+        setModalIsOpen(state, value) {
+            state.modalIsOpen = value;
+        },
+        setIsConfirmModal(state, value) {
+            state.isConfirmModal = value;
+        },
+        setMPoint(state, value) {
+            state.mPoint = value;
         }
     }
 })

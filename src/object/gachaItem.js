@@ -4,14 +4,17 @@ const item_r = [
         id: 1,
         name: 'sampleR1',
         path: '/',
-        data: ''
-
+        data: '',
+        unlocked: 'N',
+        type: 'text'
     },
     {
         id: 2,
         name: 'sampleR2',
         path:'/',
-        data: ''
+        data: '',
+        unlocked: 'N',
+        type: 'text'
     }
 ]
 
@@ -21,14 +24,10 @@ const item_sr = [
         id: 1,
         name: 'sampleSR1',
         path:'/',
-        data: ''
+        data: '',
+        unlocked: 'N',
+        type: 'img'
     },
-    {
-        id: 2,
-        name: 'sampleSR2',
-        path:'/',
-        data: ''
-    }
 ]
 
 // SSR 등급 오브젝트
@@ -37,12 +36,14 @@ const item_ssr = [
         id: 1,
         name: 'sampleSSR1',
         path:'/',
-        data: ''
+        data: '',
+        unlocked: 'N',
+        type: 'video'
     },
-    {
-        id: 2,
-        name: 'sampleSSR2',
-        path:'/',
-        data: ''
-    }
 ]
+
+export {
+    item_r,
+    item_sr,
+    item_ssr
+}

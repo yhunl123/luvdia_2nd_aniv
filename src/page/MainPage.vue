@@ -11,15 +11,20 @@
       <button class="b6" @click="pass4++"><img src="../assets/img/button/오버더월.png"></button>
     </div>
   </div>
+
+  <Modal @popupConfirm="popClose"></Modal>
 </template>
 
 <script>
-  import {ref} from "vue";
   import store from "@/store";
+  import {ref} from "vue";
+  import Modal from "@/components/Modal.vue";
 
   export default {
     name: "MainPage",
     components: {
+      Modal
+
     },
     setup() {
       const pass1 = ref(0)
@@ -28,16 +33,23 @@
       const pass4 = ref(0)
 
       const passProc = () => {
-        console.log(pass1.value, pass2.value, pass3.value, pass4.value)
+        if(pass1.value===1 && pass2.value===1 && pass3.value===1 && pass4.value===3) {
+          store.commit('setModalTitle', '잠금 해제')
+          store.commit('setModalMessage', '이제 모든 도감을 확인할 수 있습니다.')
+          store.commit('setIsConfirmModal', false)
+          store.commit('setModalIsOpen', true)
+
+          localStorage.setItem('AllUnlock', 1);
+        } else {
+          pass1.value = 0
+          pass2.value = 0
+          pass3.value = 0
+          pass4.value = 0
+        }
       }
-
-      const initLayout = () => {
-        store.commit('setIsHeader', 'Y')
-        store.commit('setIsFooter', 'Y')
+      const popClose = () => {
+        store.commit('setModalIsOpen', false)
       }
-
-
-      initLayout();
 
       return {
         // 변수
@@ -48,6 +60,7 @@
 
         // 메서드
         passProc,
+        popClose,
 
       }
     }
@@ -55,6 +68,11 @@
 </script>
 
 <style scoped>
+.wrap {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+}
 .bg-img {
   width: 100%;
   height: 100vh;
@@ -65,6 +83,8 @@
 
 .contents {
   position: absolute;
+  height: 100vh;
+  width: 100%;
 }
 
 .contents button {
@@ -74,7 +94,7 @@
 
 .contents button.b1 {
   z-index: 2;
-  position: fixed;
+  position: absolute;
   left: 29%;
   top: 50%
 }
@@ -82,7 +102,7 @@
 }
 
 .contents button.b2 {
-  position: fixed;
+  position: absolute;
   left: 28%;
   top: 54%
 }
@@ -90,15 +110,17 @@
 }
 
 .contents button.b3 {
-  position: fixed;
+  position: absolute;
   left: 27.3%;
-  top: 65%
+  top: 65%;
+  width: 13.5%;
+  height: auto;
 }
 .contents button.b3 img{
 }
 
 .contents button.b4 {
-  position: fixed;
+  position: absolute;
   left: 27.3%;
   top: 73%
 }
@@ -106,7 +128,7 @@
 }
 
 .contents button.b5 {
-  position: fixed;
+  position: absolute;
   right: 28%;
   top: 54%
 }
@@ -114,7 +136,7 @@
 }
 
 .contents button.b6 {
-  position: fixed;
+  position: absolute;
   right: 27.3%;
   top: 65%
 }
