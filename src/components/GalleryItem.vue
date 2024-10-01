@@ -2,26 +2,44 @@
   <div class="content">
 
     <div class="container">
-      <img :src="require('../assets/img/퍼펙트_털찌.png')" alt="Avatar" class="image">
+      <img :src="require('../assets/img/icon/물음표.png')" class="image">
+
       <div class="middle">
-        <div class="text">John Doe</div>
+        <div class="text" v-if="$props.item.type === 'img'">
+          <img :src="require('../assets/img/icon/편지모양.png')" class="image">
+        </div>
+
+        <div class="voice" v-if="$props.item.type === 'voice'">
+
+        </div>
+
+        <div class="video" v-if="$props.item.type === 'video'">
+
+        </div>
       </div>
+
     </div>
 
   </div>
 </template>
 
 <script>
+import {ref} from "vue";
+
 export default {
-  name: "GalleryText",
+  name: "GalleryItem",
+  props: {
+    item: Object
+  },
   setup() {
+    const unlocked = ref(false);
 
     return {
       // 변수
 
 
       // 함수
-
+      unlocked
 
     }
   }

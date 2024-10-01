@@ -7,8 +7,8 @@
       <h1>가챠 페이지</h1>
 
       <div class="gacha-buttons">
-        <button id="single-pull" @click="gachaPage(1)">1회 뽑기</button>
-        <button id="multi-pull" @click="gachaPage(10)">10회 뽑기</button>
+        <button id="single-pull" @click="getDraw(1)">1회 뽑기</button>
+        <button id="multi-pull" @click="getDraw(10)">10회 뽑기</button>
         <button id="select-item" :style="{'inline-block': pullCount > 100}">아이템 선택</button>
       </div>
 
@@ -23,6 +23,7 @@
 <script>
 import {router} from "@/router";
 import {Swiper, SwiperSlide} from "swiper/vue";
+import common from '@/js/common'
 
 import 'swiper/css/bundle';
 import {ref} from "vue";
@@ -35,18 +36,8 @@ export default {
     SwiperSlide,
   },
   setup() {
+    let isLoading = false
     let pullCount = ref(localStorage.getItem('tCount') === undefined || localStorage.getItem('tCount') === null ? 0 : localStorage.getItem('tCount'))
-
-    const gachaPage = (num) => {
-      localStorage.setItem('gCount', num)
-      localStorage.setItem('tCount', Number(pullCount.value) + num)
-
-      let mPoint = Number(store.state.mPoint) + Number(num)
-      localStorage.setItem('mPoint', mPoint)
-      store.commit('setMPoint', mPoint)
-
-      router.push('effect')
-    }
 
     // 스와이퍼
     const onSwiper = (swiper) => {
@@ -57,12 +48,39 @@ export default {
     };
     // 스와이퍼
 
+    const getDraw = (num) => {
+      if(isLoading) {
+        return;
+      }
+
+      isLoading = true
+
+      localStorage.setItem('gCount', num)
+      localStorage.setItem('tCount', Number(pullCount.value) + num)
+
+      let mPoint = Number(store.state.mPoint) + Number(num)
+      localStorage.setItem('mPoint', mPoint)
+      store.commit('setMPoint', mPoint)
+
+      const result = common.draw(num)
+
+      localStorage.setItem('result', JSON.stringify(result))
+
+      result.forEach((item, index) => {
+        common.unlockItem(item)
+      })
+
+      router.push('effect')
+
+      isLoading = false
+    }
+
     return {
       // 변수
       pullCount,
 
       // 메서드
-      gachaPage,
+      getDraw,
       onSwiper,
       onSlideChange,
 
@@ -80,7 +98,7 @@ export default {
 .bg-img {
   width: 100%;
   height: 100vh;
-  background: url(../assets/img/background/1.png) no-repeat center;
+  background: url(../assets/img/background/2_1960.png) no-repeat center;
   background-size: cover;
   position: absolute;
 }

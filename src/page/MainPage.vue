@@ -76,7 +76,7 @@
 .bg-img {
   width: 100%;
   height: 100vh;
-  background: url(../assets/img/background/124.png) no-repeat center;
+  background: url(../assets/img/background/1.png) no-repeat center;
   background-size: cover;
   position: absolute;
 }

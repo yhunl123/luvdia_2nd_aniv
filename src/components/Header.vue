@@ -3,10 +3,15 @@
     <div class="topnav">
       <div class="goods-wrap">
         <img src="../assets/logo.png"/>
+      </div>
+      <div class="goods-wrap-txt">
         <span>221113</span>
       </div>
+
       <div class="goods-wrap">
-        <img src="../assets/logo.png" height="20" width="auto"/>
+        <img src="../assets/logo.png"/>
+      </div>
+      <div class="goods-wrap-txt">
         <span>{{ mPoint }}</span>
       </div>
     </div>
@@ -66,26 +71,27 @@ export default {
   width: 400px;
   height: 30px;
   overflow: hidden;
-  justify-content: space-evenly;
   background-color: #444;
   border-radius: 10px;
   align-items: center;
-  opacity : 0.5;
+  opacity : 0.8;
 }
 
 .goods-wrap {
   display: flex;
   align-items: center;
+  width: 25%;
+  justify-content: center;
+}
+
+.goods-wrap-txt {
+  display: flex;
+  color: white;
+  width: 25%;
 }
 
 .goods-wrap img {
   height: 20px;
   width: auto;
-}
-
-.goods-wrap span {
-  color: white;
-  margin-left: 20px;
-  margin-right: 20px;
 }
 </style>

@@ -5,43 +5,13 @@
     </div>
     <div class="contents">
       <div class="r-grade">
-        <GalleryText></GalleryText>
-        <GalleryText></GalleryText>
-        <GalleryText></GalleryText>
-        <GalleryText></GalleryText>
-        <GalleryText></GalleryText>
-        <GalleryText></GalleryText>
-        <GalleryText></GalleryText>
-        <GalleryText></GalleryText>
-        <GalleryText></GalleryText>
-        <GalleryText></GalleryText>
-        <GalleryText></GalleryText>
+        <GalleryItem v-for="item in item_r" :item="item" :key="item.id"></GalleryItem>
       </div>
       <div class="sr-grade">
-        <GalleryText></GalleryText>
-        <GalleryText></GalleryText>
-        <GalleryText></GalleryText>
-        <GalleryText></GalleryText>
-        <GalleryText></GalleryText>
-        <GalleryText></GalleryText>
-        <GalleryText></GalleryText>
-        <GalleryText></GalleryText>
-        <GalleryText></GalleryText>
-        <GalleryText></GalleryText>
-        <GalleryText></GalleryText>
+        <GalleryItem v-for="item in item_sr" :item="item" :key="item.id"></GalleryItem>
       </div>
       <div class="ssr-grade">
-        <GalleryText></GalleryText>
-        <GalleryText></GalleryText>
-        <GalleryText></GalleryText>
-        <GalleryText></GalleryText>
-        <GalleryText></GalleryText>
-        <GalleryText></GalleryText>
-        <GalleryText></GalleryText>
-        <GalleryText></GalleryText>
-        <GalleryText></GalleryText>
-        <GalleryText></GalleryText>
-        <GalleryText></GalleryText>
+        <GalleryItem v-for="item in item_ssr" :item="item" :key="item.id"></GalleryItem>
       </div>
 
     </div>
@@ -49,13 +19,18 @@
 </template>
 
 <script>
-
-import GalleryText from "@/components/GalleryText.vue";
+import GalleryItem from "@/components/GalleryItem.vue";
+import {item_r, item_sr, item_ssr} from "@/object/gachaItem";
 
 export default {
   name: 'StoragePage',
+  methods: {
+    item_r() {
+      return item_r
+    }
+  },
   components: {
-    GalleryText
+    GalleryItem
 
   },
   setup() {
@@ -66,6 +41,9 @@ export default {
 
 
       // 변수
+      item_r,
+      item_sr,
+      item_ssr
     }
   }
 }

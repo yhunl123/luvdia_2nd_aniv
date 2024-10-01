@@ -15,7 +15,7 @@ import {ref, onMounted} from "vue";
 import {router} from "@/router";
 
 export default {
-  name: "StartPage",
+  name: "EffectPage",
   components: {
 
   },
@@ -27,10 +27,6 @@ export default {
       // sound.currentSrc = 0
       const sound = new Audio(require('@/assets/audio/086_팝.mp3'))
       sound.play()
-    }
-
-    const gatcha = () => {
-
     }
 
     const dragElement = (elmnt) => {
@@ -99,7 +95,6 @@ export default {
 
       // 메서드
       play,
-      gatcha,
       dragElement,
     }
   }
