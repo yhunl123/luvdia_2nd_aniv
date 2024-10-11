@@ -1,5 +1,70 @@
 
 
 /*header*/
+.header {
+    z-index: 10000;
+    top: 3%;
+    width: 100%;
+    position: fixed;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.topnav {
+    display: flex;
+    width: 400px;
+    height: 30px;
+    overflow: hidden;
+    background-color: #444;
+    border-radius: 10px;
+    align-items: center;
+    opacity : 0.8;
+}
+
+.goods-wrap {
+    display: flex;
+    align-items: center;
+    width: 25%;
+    justify-content: center;
+}
+
+.goods-wrap-txt {
+    display: flex;
+    color: white;
+    width: 25%;
+}
+
+.goods-wrap img {
+    height: 20px;
+    width: auto;
+}
+
 
 /*footer*/
+.footer {
+    position: fixed;
+    z-index: 10000;
+    margin:0;
+    left: 50%;
+    display: flex;
+    justify-content: center;
+}
+.nav-bar {
+    display: flex;
+    width: 50%;
+    justify-content: space-evenly;
+    bottom: 2.7%;
+    position: fixed;
+}
+.nav-bar a {
+    width: 80px;
+    text-align: center;
+    padding: 12px 0;
+    transition: all 0.3s ease;
+    color: black;
+    font-size: 32px;
+    text-decoration-line: none;
+}
+
+.active {background-color: #04AA6D;}

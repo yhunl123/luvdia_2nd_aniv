@@ -1,0 +1,167 @@
+/*main*/
+.wrap {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+}
+
+.bg-img {
+    width: 100%;
+    height: 100vh;
+    background: url(../src/assets/img/background/1.png) no-repeat center;
+    background-size: cover;
+    position: absolute;
+}
+
+.contents {
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+}
+
+.contents button {
+    border: none;
+    background: none;
+}
+
+.contents button.b1 {
+    z-index: 2;
+    position: absolute;
+    left: 29%;
+    top: 50%
+}
+.contents button.b1 img{
+}
+
+.contents button.b2 {
+    position: absolute;
+    left: 28%;
+    top: 54%
+}
+.contents button.b2 img{
+}
+
+.contents button.b3 {
+    position: absolute;
+    left: 27.3%;
+    top: 65%;
+    width: 13.5%;
+    height: auto;
+}
+.contents button.b3 img{
+}
+
+.contents button.b4 {
+    position: absolute;
+    left: 27.3%;
+    top: 73%
+}
+.contents button.b4 img{
+}
+
+.contents button.b5 {
+    position: absolute;
+    right: 28%;
+    top: 54%
+}
+.contents button.b5 img{
+}
+
+.contents button.b6 {
+    position: absolute;
+    right: 27.3%;
+    top: 65%
+}
+.contents button.b6 img{
+}
+
+/*modal*/
+.modal {
+    display: block;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    z-index: 10;
+    text-align: center;
+    animation: fadeIn 0.2s ease-out;
+}
+
+.modal-header {
+    padding: 15px;
+    font-size: 1.5em;
+    font-weight: bold;
+    background-color: #fe0388;
+    color: #fff;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.modal-body {
+    padding: 20px;
+    font-size: 1.2em;
+}
+
+.modal-footer {
+    padding: 10px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.modal-footer button {
+    padding: 10px 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.close-btn {
+    background-color: #f0f0f0;
+    color: black;
+    border-color: #444;
+    font-weight: bold;
+}
+
+.close-btn:hover {
+    background-color: #e0e0e0;
+}
+
+.confirm-btn {
+    background-color: deepskyblue;
+    color: #f0f0f0;
+    border: none;
+    font-weight: bold;
+}
+
+.confirm-btn:hover {
+    background-color: dodgerblue;
+}
+
+#modal-background {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 5;
+    animation: fadeInBackground 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInBackground {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}

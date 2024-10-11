@@ -67,12 +67,8 @@
   }
 </script>
 
+<!--
 <style scoped>
-.wrap {
-  position: absolute;
-  width: 100%;
-  height: 100vh;
-}
 .bg-img {
   width: 100%;
   height: 100vh;
@@ -80,68 +76,5 @@
   background-size: cover;
   position: absolute;
 }
-
-.contents {
-  position: absolute;
-  height: 100vh;
-  width: 100%;
-}
-
-.contents button {
-  border: none;
-  background: none;
-}
-
-.contents button.b1 {
-  z-index: 2;
-  position: absolute;
-  left: 29%;
-  top: 50%
-}
-.contents button.b1 img{
-}
-
-.contents button.b2 {
-  position: absolute;
-  left: 28%;
-  top: 54%
-}
-.contents button.b2 img{
-}
-
-.contents button.b3 {
-  position: absolute;
-  left: 27.3%;
-  top: 65%;
-  width: 13.5%;
-  height: auto;
-}
-.contents button.b3 img{
-}
-
-.contents button.b4 {
-  position: absolute;
-  left: 27.3%;
-  top: 73%
-}
-.contents button.b4 img{
-}
-
-.contents button.b5 {
-  position: absolute;
-  right: 28%;
-  top: 54%
-}
-.contents button.b5 img{
-}
-
-.contents button.b6 {
-  position: absolute;
-  right: 27.3%;
-  top: 65%
-}
-.contents button.b6 img{
-}
-
-
 </style>
+-->

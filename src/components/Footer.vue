@@ -42,32 +42,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-.footer {
-  position: fixed;
-  z-index: 10000;
-  margin:0;
-  left: 50%;
-  display: flex;
-  justify-content: center;
-}
-.nav-bar {
-  display: flex;
-  width: 50%;
-  justify-content: space-evenly;
-  bottom: 2.7%;
-  position: fixed;
-}
-.nav-bar a {
-  width: 80px;
-  text-align: center;
-  padding: 12px 0;
-  transition: all 0.3s ease;
-  color: black;
-  font-size: 32px;
-  text-decoration-line: none;
-}
-
-.active {background-color: #04AA6D;}
-</style>
