@@ -3,20 +3,8 @@
     position: absolute;
     width: 100%;
     height: 100vh;
-}
-
-.bg-img {
-    width: 100%;
-    height: 100vh;
-    background: url(../src/assets/img/background/1.png) no-repeat center;
-    background-size: cover;
-    position: absolute;
-}
-
-.contents {
-    position: absolute;
-    height: 100vh;
-    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 .contents button {
@@ -73,6 +61,231 @@
     top: 65%
 }
 .contents button.b6 img{
+}
+
+/*draw*/
+.draw-container {
+    padding: 30px;
+    width: 100%;
+    max-width: 500px;
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.sub-title {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: white;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+}
+
+.count-text {
+    color: white;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+}
+
+.gacha-buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.confirm-btn-blue {
+    padding: 15px 25px;
+    font-size: 18px;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    transition: background-color 0.3s;
+    background-image: linear-gradient(to right, #0099ff, #33ccff);
+    color: white;
+    box-shadow: 0px 5px 10px rgba(0, 153, 255, 0.5);
+}
+
+.confirm-btn-blue:hover {
+    background-image: linear-gradient(to right, #0066cc, #0099ff);
+}
+
+#select-item {
+    background-image: linear-gradient(to right, #ff9933, #ffcc66);
+    display: none;
+}
+
+#counter {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/*storage*/
+.sort-wrap {
+
+}
+
+.item-box {
+    border: 5px #444 solid;
+    border-radius: 15px;
+    margin: 5% 18% 145px;
+    display: flex;
+    background-color: rgba(187,187,187, 0.7);
+    flex-direction: column;
+    overflow: auto;
+    scroll-behavior: smooth;
+    min-height: 67vh;
+    height: 0;
+}
+
+.item-box::-webkit-scrollbar {
+    display: none;
+}
+
+.item-box div {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.item-list {
+}
+
+.r-grade {
+
+}
+
+.sr-grade {
+
+}
+
+.ssr-grade {
+
+}
+
+
+/*gallery*/
+.content {
+    margin: 30px;
+    width: 180px;
+    height: 180px;
+}
+
+.container {
+    position: relative;
+}
+
+.item-image {
+    opacity: 1 !important;
+    display: block;
+    width: 180px;
+    height: 180px;
+    transition: .5s ease;
+    backface-visibility: hidden;
+
+    background-size: 180px;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: 0px 0px;
+    border: none;
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+.container:hover .item-image {
+    transform: scale(1.05);
+}
+
+.middle {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    left: 50%;
+    text-align: center;
+}
+
+.middle-view {
+    opacity: 1;
+}
+
+/*.item-voice {*/
+/*    background-color: #04AA6D;*/
+/*    color: white;*/
+/*    font-size: 16px;*/
+/*    padding: 16px 32px;*/
+/*}*/
+
+/*.item-video {*/
+/*    background-color: #04AA6D;*/
+/*    color: white;*/
+/*    font-size: 16px;*/
+/*    padding: 16px 32px;*/
+/*}*/
+
+
+/*effect*/
+.effect-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+img.locker {
+    z-index: 1;
+    position: relative;
+    width: 150px;
+    height: auto;
+    top: 5%;
+}
+
+
+/*draw result*/
+.result-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+.draw-list {
+    border-radius: 15px;
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.55);
+    flex-direction: row;
+    overflow: hidden;
+    scroll-behavior: smooth;
+    min-height: 67vh;
+    height: 0;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 1265px;
+}
+
+.draw-list::-webkit-scrollbar {
+    display: none;
+}
+
+.draw-list div {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.nav-div{
+    margin-top: 70px;
+}
+.nav-div button{
+    padding: 15px;
+    margin-left: 50px;
+    margin-right: 50px;
+    width: 100px;
 }
 
 /*modal*/

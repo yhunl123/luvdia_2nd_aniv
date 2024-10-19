@@ -1,19 +1,20 @@
 <template>
-  <div class="wrap">
+  <div class="wrap bg-img">
     <div class="sort-wrap">
 
     </div>
-    <div class="contents">
-      <div class="r-grade">
-        <GalleryItem v-for="item in item_r" :item="item" :key="item.id"></GalleryItem>
+    <div class="item-box">
+      <div class="item-list">
+        <div class="r-grade">
+          <GalleryItem v-for="item in item_r" :item="item" :key="item.id"></GalleryItem>
+        </div>
+        <div class="sr-grade">
+          <GalleryItem v-for="item in item_sr" :item="item" :key="item.id"></GalleryItem>
+        </div>
+        <div class="ssr-grade">
+          <GalleryItem v-for="item in item_ssr" :item="item" :key="item.id"></GalleryItem>
+        </div>
       </div>
-      <div class="sr-grade">
-        <GalleryItem v-for="item in item_sr" :item="item" :key="item.id"></GalleryItem>
-      </div>
-      <div class="ssr-grade">
-        <GalleryItem v-for="item in item_ssr" :item="item" :key="item.id"></GalleryItem>
-      </div>
-
     </div>
   </div>
 </template>
@@ -21,20 +22,43 @@
 <script>
 import GalleryItem from "@/components/GalleryItem.vue";
 import {item_r, item_sr, item_ssr} from "@/object/gachaItem";
+import {ref} from "vue";
 
 export default {
   name: 'StoragePage',
-  methods: {
-    item_r() {
-      return item_r
-    }
-  },
   components: {
     GalleryItem
 
   },
   setup() {
+    const myItem = ref(JSON.parse(localStorage.getItem('myItem')))
 
+    item_r.map((item_r_one) => {
+      const unlockedItem = myItem.value.find((myItemOne) => {
+        return myItemOne.id == item_r_one.id && myItemOne.grade == item_r_one.grade
+      })
+      if (unlockedItem !== undefined) {
+        item_r_one.unlocked = true
+      }
+    })
+
+    item_sr.map((item_sr_one) => {
+      const unlockedItem = myItem.value.find((myItemOne) => {
+        return myItemOne.id == item_sr_one.id && myItemOne.grade == item_sr_one.grade
+      })
+      if (unlockedItem !== undefined) {
+        item_sr_one.unlocked = true
+      }
+    })
+
+    item_ssr.map((item_ssr_one) => {
+      const unlockedItem = myItem.value.find((myItemOne) => {
+        return myItemOne.id == item_ssr_one.id && myItemOne.grade == item_ssr_one.grade
+      })
+      if (unlockedItem !== undefined) {
+        item_ssr_one.unlocked = true
+      }
+    })
 
     return {
       // 함수
@@ -43,57 +67,19 @@ export default {
       // 변수
       item_r,
       item_sr,
-      item_ssr
+      item_ssr,
     }
   }
 }
 </script>
 
 <style scoped>
-.wrap {
-  box-sizing: border-box;
-  position: relative;
+
+.bg-img {
   width: 100%;
-  height: 0;
+  height: 100vh;
+  background: url(../assets/img/background/mainBkImg.png) no-repeat center;
+  background-size: cover;
+  position: absolute;
 }
-
-.sort-wrap {
-
-}
-
-.contents {
-  border: 5px #444 solid;
-  border-radius: 15px;
-  margin: 180px 16.5% 145px;
-  display: flex;
-  background-color: #bbb;
-  flex-direction: column;
-  overflow: auto;
-  scroll-behavior: smooth;
-  min-height: 67vh;
-  height: 0;
-}
-
-.contents::-webkit-scrollbar {
-  display: none;
-}
-
-.contents div {
-  display: flex;
-  flex-wrap: wrap;
-  margin-bottom: 30px;
-}
-
-.r-grade {
-
-}
-
-.sr-grade {
-
-}
-
-.ssr-grade {
-
-}
-
 </style>

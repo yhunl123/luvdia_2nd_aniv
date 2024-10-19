@@ -2,19 +2,13 @@
   <div class="content">
 
     <div class="container">
-      <img :src="require('../assets/img/icon/물음표.png')" class="image">
+      <img :src="require('../assets/img/icon/notHaveItem.png')" class="item-image" v-if="!item.unlocked">
 
-      <div class="middle">
-        <div class="text" v-if="$props.item.type === 'img'">
-          <img :src="require('../assets/img/icon/편지모양.png')" class="image">
-        </div>
-
-        <div class="voice" v-if="$props.item.type === 'voice'">
-
-        </div>
-
-        <div class="video" v-if="$props.item.type === 'video'">
-
+      <div class="middle" :class="{'middle-view': item.unlocked}">
+        <div class="item-text">
+          <button class="item-image grade-r" id="gradeImg" v-if="item.grade === 'R'"></button>
+          <button class="item-image grade-sr" id="gradeImg" v-if="item.grade === 'SR'"></button>
+          <button class="item-image grade-ssr" id="gradeImg" v-if="item.grade === 'SSR'"></button>
         </div>
       </div>
 
@@ -29,17 +23,16 @@ import {ref} from "vue";
 export default {
   name: "GalleryItem",
   props: {
-    item: Object
+    item: Object,
   },
-  setup() {
-    const unlocked = ref(false);
+  setup(props) {
+    const gradeImg = ref(null)
 
     return {
       // 변수
-
+      gradeImg,
 
       // 함수
-      unlocked
 
     }
   }
@@ -47,43 +40,27 @@ export default {
 </script>
 
 <style scoped>
-.content {
-  margin: 30px;
-  width: 150px;
-  height: 150px;
-}
-.container {
-  position: relative;
+.grade-r {
+  background-image: url("@/assets/img/icon/gradeRCloseIco.png");
 }
 
-.image {
-  opacity: 1;
-  display: block;
-  width: 150px;
-  height: auto;
-  transition: .5s ease;
-  backface-visibility: hidden;
+.grade-sr {
+  background-image: url("@/assets/img/icon/gradeSRCloseIco.png");
 }
 
-.middle {
-  transition: .5s ease;
-  opacity: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  text-align: center;
+.grade-ssr {
+  background-image: url("@/assets/img/icon/gradeSSRCloseIco.png");
 }
 
-.container:hover .image {
-  transform: scale(1.05);
+.grade-r:hover {
+  background-image: url("@/assets/img/icon/gradeROpenIco.png");
 }
 
-.text {
-  background-color: #04AA6D;
-  color: white;
-  font-size: 16px;
-  padding: 16px 32px;
+.grade-sr:hover {
+  background-image: url("@/assets/img/icon/gradeSROpenIco.png");
+}
+
+.grade-ssr:hover {
+  background-image: url("@/assets/img/icon/gradeSSROpenIco.png");
 }
 </style>

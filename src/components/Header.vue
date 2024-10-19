@@ -1,5 +1,5 @@
 <template>
-  <div class="header" :class="{hidden: !hasHeader}">
+  <div class="header" v-if="hasHeader">
     <div class="topnav">
       <div class="goods-wrap">
         <img src="../assets/logo.png"/>

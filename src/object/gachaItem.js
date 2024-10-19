@@ -6,7 +6,8 @@ const item_r = [
         path: '/',
         data: '1번 R등급 편지입니다',
         type: 'img',
-        grade: 'R'
+        grade: 'R',
+        unlocked: false
     },
     {
         id: 2,
@@ -14,7 +15,8 @@ const item_r = [
         path:'/',
         data: '2번 R등급 편지입니다',
         type: 'img',
-        grade: 'R'
+        grade: 'R',
+        unlocked: false
     },
     {
         id: 3,
@@ -22,7 +24,8 @@ const item_r = [
         path:'/',
         data: '3번 R등급 편지입니다',
         type: 'img',
-        grade: 'R'
+        grade: 'R',
+        unlocked: false
     },
     {
         id: 4,
@@ -30,7 +33,8 @@ const item_r = [
         path:'/',
         data: '4번 R등급 편지입니다',
         type: 'img',
-        grade: 'R'
+        grade: 'R',
+        unlocked: false
     },
     {
         id: 5,
@@ -38,7 +42,8 @@ const item_r = [
         path:'/',
         data: '5번 R등급 편지입니다',
         type: 'img',
-        grade: 'R'
+        grade: 'R',
+        unlocked: false
     },
     {
         id: 6,
@@ -46,7 +51,8 @@ const item_r = [
         path:'/',
         data: '6번 R등급 편지입니다',
         type: 'img',
-        grade: 'R'
+        grade: 'R',
+        unlocked: false
     },
 ]
 
@@ -58,7 +64,8 @@ const item_sr = [
         path:'/',
         data: '1번 SR등급 편지입니다',
         type: 'voice',
-        grade: 'SR'
+        grade: 'SR',
+        unlocked: false
     },
     {
         id: 2,
@@ -66,7 +73,8 @@ const item_sr = [
         path:'/',
         data: '2번 SR등급 편지입니다',
         type: 'voice',
-        grade: 'SR'
+        grade: 'SR',
+        unlocked: false
     },
     {
         id: 3,
@@ -74,7 +82,8 @@ const item_sr = [
         path:'/',
         data: '3번 SR등급 편지입니다',
         type: 'voice',
-        grade: 'SR'
+        grade: 'SR',
+        unlocked: false
     },
     {
         id: 4,
@@ -82,7 +91,8 @@ const item_sr = [
         path:'/',
         data: '4번 SR등급 편지입니다',
         type: 'voice',
-        grade: 'SR'
+        grade: 'SR',
+        unlocked: false
     },
     {
         id: 5,
@@ -90,7 +100,8 @@ const item_sr = [
         path:'/',
         data: '5번 SR등급 편지입니다',
         type: 'voice',
-        grade: 'SR'
+        grade: 'SR',
+        unlocked: false
     },
     {
         id: 6,
@@ -98,7 +109,8 @@ const item_sr = [
         path:'/',
         data: '6번 SR등급 편지입니다',
         type: 'voice',
-        grade: 'SR'
+        grade: 'SR',
+        unlocked: false
     },
     {
         id: 7,
@@ -106,7 +118,8 @@ const item_sr = [
         path:'/',
         data: '7번 SR등급 편지입니다',
         type: 'voice',
-        grade: 'SR'
+        grade: 'SR',
+        unlocked: false
     },
 ]
 
@@ -118,7 +131,8 @@ const item_ssr = [
         path:'/',
         data: '1번 SSR등급 편지입니다',
         type: 'video',
-        grade: 'SSR'
+        grade: 'SSR',
+        unlocked: false
     },
     {
         id: 2,
@@ -126,7 +140,8 @@ const item_ssr = [
         path:'/',
         data: '2번 SSR등급 편지입니다',
         type: 'video',
-        grade: 'SSR'
+        grade: 'SSR',
+        unlocked: false
     },
     {
         id: 3,
@@ -134,7 +149,8 @@ const item_ssr = [
         path:'/',
         data: '3번 SSR등급 편지입니다',
         type: 'video',
-        grade: 'SSR'
+        grade: 'SSR',
+        unlocked: false
     },
     {
         id: 4,
@@ -142,7 +158,8 @@ const item_ssr = [
         path:'/',
         data: '4번 SSR등급 편지입니다',
         type: 'video',
-        grade: 'SSR'
+        grade: 'SSR',
+        unlocked: false
     },
     {
         id: 5,
@@ -150,7 +167,8 @@ const item_ssr = [
         path:'/',
         data: '5번 SSR등급 편지입니다',
         type: 'video',
-        grade: 'SSR'
+        grade: 'SSR',
+        unlocked: false
     },
     {
         id: 6,
@@ -158,7 +176,8 @@ const item_ssr = [
         path:'/',
         data: '6번 SSR등급 편지입니다',
         type: 'video',
-        grade: 'SSR'
+        grade: 'SSR',
+        unlocked: false
     },
     {
         id: 7,
@@ -166,7 +185,8 @@ const item_ssr = [
         path:'/',
         data: '7번 SSR등급 편지입니다',
         type: 'video',
-        grade: 'SSR'
+        grade: 'SSR',
+        unlocked: false
     },
     {
         id: 8,
@@ -174,7 +194,8 @@ const item_ssr = [
         path:'/',
         data: '8번 SSR등급 편지입니다',
         type: 'video',
-        grade: 'SSR'
+        grade: 'SSR',
+        unlocked: false
     },
     {
         id: 9,
@@ -182,7 +203,8 @@ const item_ssr = [
         path:'/',
         data: '9번 SSR등급 편지입니다',
         type: 'video',
-        grade: 'SSR'
+        grade: 'SSR',
+        unlocked: false
     },
 ]
 

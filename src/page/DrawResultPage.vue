@@ -1,23 +1,20 @@
 <template>
-  <div class="wrap">
-    <div class="contents">
-      <table>
-        <h2>뽑기 결과</h2>
-        <tr>
-          <th>등급</th>
-          <th>이름</th>
-          <th>내용</th>
-        </tr>
-        <tr v-for="item in itemList" :key="item">
-          <td>{{item.grade}}</td>
-          <td>{{item.name}}</td>
-          <td>{{item.data}}</td>
-        </tr>
-      </table>
-    </div>
-    <div class="nav-div">
-      <button @click="router.push('/draw')">돌아가기</button>
-      <button @click="reDraw">재뽑기</button>
+  <div class="wrap bg-img" :class="{'bk-img-r': highGrade==='R', 'bk-img-sr': highGrade==='SR', 'bk-img-ssr': highGrade==='SSR'}">
+    <div class="result-div">
+      <div
+          class="draw-list"
+          :class="{'border-r': highGrade==='R', 'border-sr': highGrade==='SR', 'border-ssr': highGrade==='SSR'}"
+          v-if="gCount == 10"
+      >
+        <GalleryItem v-for="item in itemList" :item="item" :key="item.id"></GalleryItem>
+      </div>
+      <div class="draw-one" v-if="gCount == 1">
+
+      </div>
+      <div class="nav-div">
+        <button @click="router.push('/draw')">돌아가기</button>
+        <button @click="reDraw">재뽑기</button>
+      </div>
     </div>
   </div>
 </template>
@@ -28,15 +25,18 @@ import common from "@/js/common";
 import {ref} from "vue";
 import store from "@/store";
 import {item_r, item_sr, item_ssr} from "@/object/gachaItem";
+import GalleryItem from "@/components/GalleryItem.vue";
 
 export default {
   name: "DrawResultPage",
   components: {
+    GalleryItem
 
   },
   setup() {
     let isLoading = false
     let pullCount = ref(localStorage.getItem('tCount') === undefined || localStorage.getItem('tCount') === null ? 0 : localStorage.getItem('tCount'))
+    const highGrade = ref('R')
     const results = JSON.parse(localStorage.getItem('result'))
     const gCount = localStorage.getItem('gCount')
     localStorage.removeItem('result')
@@ -51,12 +51,16 @@ export default {
     const getItemList = () => {
       results.forEach((result) => {
         if (result.grade === 'R') {
-          itemList.value.push(item_r.filter((item) => item.id === result.id)[0])
+          itemList.value.push(item_r.find((item) => item.id === result.id))
         } else if (result.grade === 'SR') {
-          itemList.value.push(item_sr.filter((item) => item.id === result.id)[0])
+          itemList.value.push(item_sr.find((item) => item.id === result.id))
         } else {
-          itemList.value.push(item_ssr.filter((item) => item.id === result.id)[0])
+          itemList.value.push(item_ssr.find((item) => item.id === result.id))
         }
+      })
+
+      itemList.value.map((itemOne) => {
+        itemOne.unlocked = true
       })
     }
 
@@ -87,12 +91,28 @@ export default {
       isLoading = false
     }
 
+    const getHighGrade = () => {
+      debugger
+      itemList.value.forEach((itemOne) => {
+        if (itemOne.grade === 'SSR') {
+          highGrade.value = 'SSR'
+        } else if (itemOne.grade === 'SR') {
+          if (highGrade.value !== 'SSR') {
+            highGrade.value = 'SR'
+          }
+        }
+      })
+    }
+
     getItemList()
+    getHighGrade()
 
     return {
       // 변수
       router,
       itemList,
+      gCount,
+      highGrade,
 
       // 함수
       reDraw,
@@ -104,35 +124,32 @@ export default {
 </script>
 
 <style scoped>
-.wrap {
-  position: absolute;
-  display: flex;
+.bg-img {
   width: 100%;
   height: 100vh;
-  flex-direction: column;
-  align-items: center;
+  position: absolute;
 }
-.contents{
-  margin-top: 100px;
+
+.bk-img-r {
+  background: url(../assets/img/background/drawResultBkImg.png) no-repeat center;
+  background-size: cover;
 }
-.nav-div{
-  margin-top: 60px;
+.bk-img-sr {
+  background: url(../assets/img/background/drawSResultBkImg.png) no-repeat center;
+  background-size: cover;
 }
-.nav-div button{
-  padding: 15px;
-  margin-left: 10px;
-  margin-right: 10px;
-  width: 100px;
+.bk-img-ssr {
+  background: url(../assets/img/background/drawSSResultBkImg.png) no-repeat center;
+  background-size: cover;
 }
-table {
-  display: flex;
-  border-collapse: collapse;
-  width: 100%;
-  border: 1px solid #ddd;
-  flex-direction: column;
+
+.border-r {
+  border: 2.5px solid rgba(0,0,0, 0.7);
 }
-th, td {
-  text-align: left;
-  padding: 16px;
+.border-sr {
+  border: 2.5px solid rgba(179,147,201, 0.9);
+}
+.border-ssr {
+  border: 2.5px solid rgba(246,221,140, 0.9);
 }
 </style>

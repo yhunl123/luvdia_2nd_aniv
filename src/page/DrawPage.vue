@@ -1,15 +1,12 @@
 <template>
-  <div class="wrap">
-    <div class="bg-img">
-    </div>
-    <div class="container">
-
-      <h1>가챠 페이지</h1>
+  <div class="wrap bg-img">
+    <div class="draw-container">
+      <h1 class="sub-title">가챠 페이지</h1>
 
       <div class="gacha-buttons">
-        <button id="single-pull" @click="getDraw(1)">1회 뽑기</button>
-        <button id="multi-pull" @click="getDraw(10)">10회 뽑기</button>
-        <button id="select-item" :style="{'inline-block': pullCount > 100}">아이템 선택</button>
+        <button class="confirm-btn-blue" id="single-pull" @click="getDraw(1)">1회 뽑기</button>
+        <button class="confirm-btn-blue" id="multi-pull" @click="getDraw(10)">10회 뽑기</button>
+        <button class="confirm-btn-blue" id="select-item" :style="{'inline-block': pullCount > 100}">아이템 선택</button>
       </div>
 
       <div id="counter" class="count-text">
@@ -90,85 +87,11 @@ export default {
 </script>
 
 <style scoped>
-.wrap {
-  display: flex;
-  justify-content: center;
-}
-
 .bg-img {
   width: 100%;
   height: 100vh;
-  background: url(../assets/img/background/2_1960.png) no-repeat center;
+  background: url(../assets/img/background/drawBkImg.png) no-repeat center;
   background-size: cover;
   position: absolute;
-}
-
-.container {
-  padding: 30px;
-  width: 100%;
-  max-width: 500px;
-  position: absolute;
-  z-index: 2;
-  top: 50%;
-  display: flex;
-  flex-direction: column;
-}
-
-h1 {
-  font-size: 36px;
-  margin-bottom: 20px;
-  color: white;
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: black;
-}
-
-.count-text {
-  color: white;
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: black;
-}
-
-.gacha-buttons {
-  margin-top: 20px;
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-}
-
-button {
-  padding: 15px 25px;
-  font-size: 18px;
-  cursor: pointer;
-  border: none;
-  border-radius: 10px;
-  transition: background-color 0.3s;
-  background-image: linear-gradient(to right, #0099ff, #33ccff);
-  color: white;
-  box-shadow: 0px 5px 10px rgba(0, 153, 255, 0.5);
-}
-
-button:hover {
-  background-image: linear-gradient(to right, #0066cc, #0099ff);
-}
-
-#select-item {
-  background-image: linear-gradient(to right, #ff9933, #ffcc66);
-  display: none;
-}
-
-#counter {
-  margin-top: 20px;
-  font-size: 18px;
-  font-weight: bold;
-}
-
-.swipe-img {
-  width: 500px;
-}
-
-.big-banner {
-  position: absolute;
-  top: 0;
-  left: 0;
 }
 </style>
