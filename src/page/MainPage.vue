@@ -5,19 +5,20 @@
     </div>
   </div>
 
-  <Modal @popupConfirm="popClose"></Modal>
+  <Footer></Footer>
 </template>
 
 <script>
   import store from "@/store";
   import {ref} from "vue";
   import Modal from "@/components/Modal.vue";
+  import Footer from "@/components/Footer.vue";
 
   export default {
     name: "MainPage",
     components: {
-      Modal
-
+      Modal,
+      Footer
     },
     setup() {
       const pass1 = ref(0)

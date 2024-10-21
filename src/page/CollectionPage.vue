@@ -1,19 +1,22 @@
 <template>
   <div class="wrap bg-img">
-    <div class="sort-wrap">
-
-    </div>
     <div class="item-box">
+      <div class="tab-title"><span class="tab-text">도</span>감</div>
       <div class="item-list">
+        <span class="item-sep">R</span><hr>
         <div class="r-grade">
           <GalleryItem v-for="item in item_r" :item="item" :key="item.id"></GalleryItem>
-        </div>
+        </div><br>
+
+        <span class="item-sep">SR</span><hr>
         <div class="sr-grade">
           <GalleryItem v-for="item in item_sr" :item="item" :key="item.id"></GalleryItem>
-        </div>
+        </div><br>
+
+        <span class="item-sep">SSR</span><hr>
         <div class="ssr-grade">
           <GalleryItem v-for="item in item_ssr" :item="item" :key="item.id"></GalleryItem>
-        </div>
+        </div><br>
       </div>
     </div>
   </div>
@@ -25,7 +28,7 @@ import {item_r, item_sr, item_ssr} from "@/object/gachaItem";
 import {ref} from "vue";
 
 export default {
-  name: 'StoragePage',
+  name: 'collection',
   components: {
     GalleryItem
 
@@ -78,7 +81,7 @@ export default {
 .bg-img {
   width: 100%;
   height: 100vh;
-  background: url(../assets/img/background/mainBkImg.png) no-repeat center;
+  background: url(../assets/img/background/collectionBkImg.png) no-repeat center;
   background-size: cover;
   position: absolute;
 }

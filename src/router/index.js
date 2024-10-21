@@ -4,13 +4,13 @@ import { createRouter, createWebHistory } from 'vue-router'
 import EffectPage from '../page/EffectPage.vue'
 import MainPage from '../page/MainPage.vue'
 import DrawPage from "../page/DrawPage.vue";
-import StoragePage from "../page/StoragePage.vue";
+import StoragePage from "../page/CollectionPage.vue";
 import DrawResultPage from "@/page/DrawResultPage.vue";
 
 // 라우터 설계
 const routes = [
-    { path: '/', name: '', component:MainPage, props: {hasHeader:true, hasFooter:true}},
-    { path: '/storage', name: 'storage', component:StoragePage, props: {hasHeader:true, hasFooter:true}},
+    { path: '/', name: 'main', component:MainPage, props: {hasHeader:true, hasFooter:true}},
+    { path: '/collection', name: 'collection', component:StoragePage, props: {hasHeader:true, hasFooter:true}},
     { path: '/draw', name: 'draw', component:DrawPage, props: {hasHeader:true, hasFooter:true}},
     { path: '/effect',name: 'effect', component:EffectPage, props: {hasHeader:false, hasFooter:false}},
     { path: '/result',name: 'result', component:DrawResultPage, props: {hasHeader:false, hasFooter:false}},

@@ -1,12 +1,10 @@
 <template>
   <Header :key="$route.fullPath"></Header>
   <router-view :key="$route.fullPath"/>
-  <Footer :key="$route.fullPath"></Footer>
 </template>
 
 <script>
 import Header from "@/components/Header.vue";
-import Footer from "@/components/Footer.vue";
 import Modal from "@/components/Modal.vue";
 
 export default {
@@ -14,7 +12,6 @@ export default {
   components: {
     Modal,
     Header,
-    Footer
   },
   setup() {
 
