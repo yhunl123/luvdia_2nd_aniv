@@ -197,19 +197,6 @@
     margin-bottom: -10px; /* 선과 텍스트 사이를 좁혀줌 */
 }
 
-.r-grade {
-
-}
-
-.sr-grade {
-
-}
-
-.ssr-grade {
-
-}
-
-
 /*gallery*/
 .content {
     margin: 30px;
@@ -242,6 +229,32 @@
     transform: scale(1.05);
 }
 
+.item-image-one {
+    opacity: 1 !important;
+    display: block;
+    width: 300px;
+    height: 300px;
+    transition: .5s ease;
+    backface-visibility: hidden;
+
+    background-size: 300px;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: 0px 0px;
+    border: none;
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+.item-image-one {
+    transform: scale(1.05);
+}
+
+.new-item {
+    width: 100%;
+    height: 100%;
+}
+
 .middle {
     transition: .5s ease;
     opacity: 0;
@@ -250,8 +263,23 @@
     text-align: center;
 }
 
+.middle-one {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    text-align: center;
+}
+
 .middle-view {
     opacity: 1;
+}
+
+.item-number {
+    font-size: 30px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    font-weight: bold;
 }
 
 /*.item-voice {*/
@@ -320,6 +348,12 @@ img.locker {
     margin-bottom: 30px;
 }
 
+.draw-one {
+    width: 300px;
+    height: 300px;
+    margin-bottom: 50px;
+}
+
 .nav-div{
     margin-top: 70px;
 }
@@ -332,39 +366,49 @@ img.locker {
 
 /*modal*/
 .modal {
-    display: block;
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 400px;
+    width: 700px;
+    min-height: 500px;
     background-color: rgba(238, 238, 238, 0.9);
     border-radius: 15px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
     z-index: 10;
     text-align: center;
     animation: fadeIn 0.2s ease-out;
+
+    display: flex;
+    flex-direction: column; /* 자식 요소들을 세로로 배치 */
 }
 
 .modal-header {
     padding: 15px;
-    font-size: 1.5em;
+    font-size: 2em;
     font-weight: bold;
     background-color: #fe0388;
     color: #fff;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
+    letter-spacing: 4px;
 }
 
 .modal-body {
     padding: 20px;
-    font-size: 1.2em;
+    font-size: 1.5em;
+    line-height: 1.5em;
+    letter-spacing: 1px;
 }
 
 .modal-footer {
     padding: 10px;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
+
+    align-self: center;
+    margin-top: auto;
+    margin-bottom: 20px;
 }
 
 .modal-footer button {

@@ -36,6 +36,22 @@ const draw = (num) => {
     return result
 }
 
+const checkNewItem = (item) => {
+    let myItems = JSON.parse(localStorage.getItem('myItem'))
+
+    if (myItems == null) {
+        item.isNew = true;
+    } else {
+        if(myItems.findIndex((myItem) => myItem.id === item.id && myItem.grade === item.grade) === -1) {
+            item.isNew = true;
+        } else {
+            item.isNew = false;
+        }
+
+    }
+    return item;
+}
+
 const unlockItem = (item) => {
     let myItems = JSON.parse(localStorage.getItem('myItem'))
 
@@ -52,5 +68,6 @@ const unlockItem = (item) => {
 
 export default {
     draw,
-    unlockItem
+    checkNewItem,
+    unlockItem,
 }

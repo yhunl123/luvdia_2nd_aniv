@@ -5,17 +5,17 @@
       <div class="item-list">
         <span class="item-sep">R</span><hr>
         <div class="r-grade">
-          <GalleryItem v-for="item in item_r" :item="item" :key="item.id"></GalleryItem>
+          <GalleryItem v-for="item in item_r" :item="item" :key="item.id" :view-one="false"></GalleryItem>
         </div><br>
 
         <span class="item-sep">SR</span><hr>
         <div class="sr-grade">
-          <GalleryItem v-for="item in item_sr" :item="item" :key="item.id"></GalleryItem>
+          <GalleryItem v-for="item in item_sr" :item="item" :key="item.id" :view-one="false"></GalleryItem>
         </div><br>
 
         <span class="item-sep">SSR</span><hr>
         <div class="ssr-grade">
-          <GalleryItem v-for="item in item_ssr" :item="item" :key="item.id"></GalleryItem>
+          <GalleryItem v-for="item in item_ssr" :item="item" :key="item.id" :view-one="false"></GalleryItem>
         </div><br>
       </div>
     </div>
@@ -34,34 +34,36 @@ export default {
 
   },
   setup() {
-    const myItem = ref(JSON.parse(localStorage.getItem('myItem')))
+    const myItem = ref(localStorage.getItem('myItem') === null || localStorage.getItem('myItem') === undefined ? [] : JSON.parse(localStorage.getItem('myItem')))
 
-    item_r.map((item_r_one) => {
-      const unlockedItem = myItem.value.find((myItemOne) => {
-        return myItemOne.id == item_r_one.id && myItemOne.grade == item_r_one.grade
+    if(myItem.value != []) {
+      item_r.map((item_r_one) => {
+        const unlockedItem = myItem.value.find((myItemOne) => {
+          return myItemOne.id == item_r_one.id && myItemOne.grade == item_r_one.grade
+        })
+        if (unlockedItem !== undefined) {
+          item_r_one.unlocked = true
+        }
       })
-      if (unlockedItem !== undefined) {
-        item_r_one.unlocked = true
-      }
-    })
 
-    item_sr.map((item_sr_one) => {
-      const unlockedItem = myItem.value.find((myItemOne) => {
-        return myItemOne.id == item_sr_one.id && myItemOne.grade == item_sr_one.grade
+      item_sr.map((item_sr_one) => {
+        const unlockedItem = myItem.value.find((myItemOne) => {
+          return myItemOne.id == item_sr_one.id && myItemOne.grade == item_sr_one.grade
+        })
+        if (unlockedItem !== undefined) {
+          item_sr_one.unlocked = true
+        }
       })
-      if (unlockedItem !== undefined) {
-        item_sr_one.unlocked = true
-      }
-    })
 
-    item_ssr.map((item_ssr_one) => {
-      const unlockedItem = myItem.value.find((myItemOne) => {
-        return myItemOne.id == item_ssr_one.id && myItemOne.grade == item_ssr_one.grade
+      item_ssr.map((item_ssr_one) => {
+        const unlockedItem = myItem.value.find((myItemOne) => {
+          return myItemOne.id == item_ssr_one.id && myItemOne.grade == item_ssr_one.grade
+        })
+        if (unlockedItem !== undefined) {
+          item_ssr_one.unlocked = true
+        }
       })
-      if (unlockedItem !== undefined) {
-        item_ssr_one.unlocked = true
-      }
-    })
+    }
 
     return {
       // 함수

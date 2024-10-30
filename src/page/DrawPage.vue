@@ -61,11 +61,12 @@ export default {
 
       const result = common.draw(num)
 
-      localStorage.setItem('result', JSON.stringify(result))
-
       result.forEach((item, index) => {
+        common.checkNewItem(item)
         common.unlockItem(item)
       })
+
+      localStorage.setItem('result', JSON.stringify(result))
 
       router.push('effect')
 

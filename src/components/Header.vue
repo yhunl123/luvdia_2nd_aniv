@@ -17,6 +17,8 @@
       </div>
     </div>
   </div>
+
+  <Modal></Modal>
 </template>
 
 <script>
@@ -24,11 +26,12 @@ import {router} from "@/router";
 import {ref} from "vue";
 import {useRoute} from "vue-router";
 import store from "@/store";
-
+import Modal from "@/components/Modal.vue";
 
 export default {
   name: "Header",
   components: {
+    Modal
   },
   props: {
 

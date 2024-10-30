@@ -6,11 +6,13 @@
           :class="{'border-r': highGrade==='R', 'border-sr': highGrade==='SR', 'border-ssr': highGrade==='SSR'}"
           v-if="gCount == 10"
       >
-        <GalleryItem v-for="item in itemList" :item="item" :key="item.id"></GalleryItem>
+        <GalleryItem v-for="item in itemList" :item="item" :key="item.id" :view-one="false"></GalleryItem>
       </div>
-      <div class="draw-one" v-if="gCount == 1">
 
+      <div class="draw-one" v-if="gCount == 1"  v-for="item in itemList" :key="item.id">
+        <GalleryItem v-for="item in itemList" :item="item" :key="item.id" :view-one="true"></GalleryItem>
       </div>
+
       <div class="nav-div">
         <button @click="router.push('/draw')">돌아가기</button>
         <button @click="reDraw">재뽑기</button>
@@ -26,10 +28,12 @@ import {ref} from "vue";
 import store from "@/store";
 import {item_r, item_sr, item_ssr} from "@/object/gachaItem";
 import GalleryItem from "@/components/GalleryItem.vue";
+import Modal from "@/App.vue";
 
 export default {
   name: "DrawResultPage",
   components: {
+    Modal,
     GalleryItem
 
   },
@@ -39,6 +43,7 @@ export default {
     const highGrade = ref('R')
     const results = JSON.parse(localStorage.getItem('result'))
     const gCount = localStorage.getItem('gCount')
+
     localStorage.removeItem('result')
 
     const itemList = ref([])
@@ -56,6 +61,10 @@ export default {
           itemList.value.push(item_sr.find((item) => item.id === result.id))
         } else {
           itemList.value.push(item_ssr.find((item) => item.id === result.id))
+        }
+
+        if (result.isNew) {
+          itemList.value[itemList.value.length-1].isNew = true
         }
       })
 
@@ -83,6 +92,7 @@ export default {
       localStorage.setItem('result', JSON.stringify(result))
 
       result.forEach((item, index) => {
+        common.checkNewItem(item)
         common.unlockItem(item)
       })
 
@@ -151,5 +161,30 @@ export default {
 }
 .border-ssr {
   border: 2.5px solid rgba(246,221,140, 0.9);
+}
+
+
+.grade-r {
+  background-image: url("@/assets/img/icon/gradeRCloseIco.png");
+}
+
+.grade-sr {
+  background-image: url("@/assets/img/icon/gradeSRCloseIco.png");
+}
+
+.grade-ssr {
+  background-image: url("@/assets/img/icon/gradeSSRCloseIco.png");
+}
+
+.grade-r:hover {
+  background-image: url("@/assets/img/icon/gradeROpenIco.png");
+}
+
+.grade-sr:hover {
+  background-image: url("@/assets/img/icon/gradeSROpenIco.png");
+}
+
+.grade-ssr:hover {
+  background-image: url("@/assets/img/icon/gradeSSROpenIco.png");
 }
 </style>

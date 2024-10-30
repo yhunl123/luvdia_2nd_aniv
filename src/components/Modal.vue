@@ -5,12 +5,13 @@
     <div class="modal-header">
       {{ modalTitle }}
     </div>
-    <div class="modal-body">
-      {{ modalMessage }}
+
+    <div class="modal-body" v-html="modalMessage">
+
     </div>
+
     <div class="modal-footer">
-      <button class="close-btn" id="closeModal" @click="close" v-if="isConfirmModal">취소</button>
-      <button class="confirm-btn" id="confirm" @click="$emit('popupConfirm')">확인</button>
+      <button class="confirm-btn" id="confirm" @click="close">확인</button>
     </div>
   </div>
 </template>
