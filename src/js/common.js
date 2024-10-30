@@ -66,8 +66,15 @@ const unlockItem = (item) => {
     localStorage.setItem('myItem', JSON.stringify(myItems));
 }
 
+const openModal = (title, message) => {
+    store.commit('setModalTitle', title)
+    store.commit('setModalMessage', message)
+    store.commit('setModalIsOpen', true)
+}
+
 export default {
     draw,
     checkNewItem,
     unlockItem,
+    openModal
 }

@@ -14,7 +14,7 @@
           :src="noticeImg"
           @mouseenter="hoverIn"
           @mouseleave="hoverOut"
-          @click="">
+          @click="common.openModal('안 내 문', noticeText)">
       <img
           class="nav-img cafe-img"
           id="cafe"
@@ -37,6 +37,8 @@
 import {router} from "@/router";
 import {ref} from "vue";
 import {useRoute} from "vue-router";
+import common from '@/js/common'
+import {noticeText} from "@/object/noticeText";
 
 export default {
   name: 'Footer',
@@ -109,6 +111,8 @@ export default {
       drawImg,
       noticeImg,
       collectionImg,
+      common,
+      noticeText,
 
       //함수
       hoverIn,

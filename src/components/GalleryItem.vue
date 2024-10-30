@@ -10,7 +10,7 @@
             :class="{'item-image': !viewOne, 'item-image-one': viewOne}"
             id="gradeImg"
             v-if="item.grade === 'R'"
-            @click="openModal(item.name, item.data)"
+            @click="common.openModal(item.name, item.data)"
         >
           <img class="new-item" src="../assets/img/icon/느낌표.png" alt="새 아이템" v-if="item.isNew">
           <span class="item-number" style="color: #03f0fe; -webkit-text-stroke: 1px gray;">{{item.id}}</span>
@@ -21,7 +21,7 @@
             :class="{'item-image': !viewOne, 'item-image-one': viewOne}"
             id="gradeImg"
             v-if="item.grade === 'SR'"
-            @click="openModal(item.name, item.data)"
+            @click="common.openModal(item.name, item.data)"
         >
           <img class="new-item" src="../assets/img/icon/느낌표.png" alt="새 아이템" v-if="item.isNew">
           <span class="item-number" style="color: #fe0388; -webkit-text-stroke: 1px gray;">{{item.id}}</span>
@@ -32,7 +32,7 @@
             :class="{'item-image':! viewOne, 'item-image-one': viewOne}"
             id="gradeImg"
             v-if="item.grade === 'SSR'"
-            @click="openModal(item.name, item.data)"
+            @click="common.openModal(item.name, item.data)"
         >
           <img class="new-item" src="../assets/img/icon/느낌표.png" alt="새 아이템" v-if="item.isNew">
           <span class="item-number" style="color: #fedf03; -webkit-text-stroke: 1px gray;">{{item.id}}</span>
@@ -46,7 +46,7 @@
 
 <script>
 import {ref} from "vue";
-import store from "@/store";
+import common from '@/js/common'
 
 export default {
   name: "GalleryItem",
@@ -60,18 +60,13 @@ export default {
   setup(props) {
     const gradeImg = ref(null)
 
-    const openModal = (title, message) => {
-      store.commit('setModalTitle', title)
-      store.commit('setModalMessage', message)
-      store.commit('setModalIsOpen', true)
-    }
-
     return {
       // 변수
       gradeImg,
+      common,
 
       // 함수
-      openModal,
+
 
     }
   }
