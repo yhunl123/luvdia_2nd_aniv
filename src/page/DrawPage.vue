@@ -1,17 +1,11 @@
 <template>
   <div class="wrap bg-img">
     <div class="draw-container">
-      <h1 class="sub-title">가챠 페이지</h1>
 
-      <div class="gacha-buttons">
-        <button class="confirm-btn-blue" id="single-pull" @click="getDraw(1)">1회 뽑기</button>
-        <button class="confirm-btn-blue" id="multi-pull" @click="getDraw(10)">10회 뽑기</button>
-        <button class="confirm-btn-blue" id="select-item" :style="{'inline-block': pullCount > 100}">아이템 선택</button>
-      </div>
-
-      <div id="counter" class="count-text">
-        현재 뽑기 횟수: <span id="pull-count">{{ pullCount }}</span>회
-      </div>
+      <img class="draw-banner" src="@/assets/img/배너무지개2.png" alt="가챠배너">
+      <img class="rate-info" src="@/assets/img/button/확률정보.png" alt="확률정보" @click="common.openModal('확률정보', rateInfo)">
+      <img class="draw-btn" src="@/assets/img/button/1회%20뽑기.png" alt="단차" @click="getDraw(1)">
+      <img class="draw-btn" src="@/assets/img/button/10회%20뽑기.png" alt="10연차" @click="getDraw(10)">
     </div>
 
   </div>
@@ -35,6 +29,14 @@ export default {
   setup() {
     let isLoading = false
     let pullCount = ref(localStorage.getItem('tCount') === undefined || localStorage.getItem('tCount') === null ? 0 : localStorage.getItem('tCount'))
+    const rateInfo = '확률 정보에 대한 안내문입니다.<br>' +
+        '<span style="color: #03f0fe">R</span> : 80%<br>' +
+        '<span style="color: #fe0388">SR</span> : 16%<br>' +
+        '<span style="color: #fedf03">SSR</span> : 4%<br>' +
+        '<br>' +
+        '본 컨텐츠의 편지들은 등급별로 중요도의 차이는 없으며<br>' +
+        '컨텐츠로써의 연출임을 안내드립니다.<br>' +
+        '여러분들 편지 모두 소중하며 도움에 감사드립니다.';
 
     // 스와이퍼
     const onSwiper = (swiper) => {
@@ -76,12 +78,13 @@ export default {
     return {
       // 변수
       pullCount,
+      rateInfo,
 
       // 메서드
       getDraw,
       onSwiper,
       onSlideChange,
-
+      common,
     }
   }
 }

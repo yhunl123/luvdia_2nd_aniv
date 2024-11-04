@@ -6,11 +6,11 @@
 
       <div :class="{'middle': !viewOne, 'middle-one': viewOne, 'middle-view': item.unlocked}" v-if="item.unlocked">
         <button
-            class="item grade-r"
+            class="grade-r"
             :class="{'item-image': !viewOne, 'item-image-one': viewOne}"
             id="gradeImg"
             v-if="item.grade === 'R'"
-            @click="common.openModal(item.name, item.data)"
+            @click="checkType(item)"
         >
           <img class="new-item" src="../assets/img/icon/느낌표.png" alt="새 아이템" v-if="item.isNew">
           <span class="item-number" style="color: #03f0fe; -webkit-text-stroke: 1px gray;">{{item.id}}</span>
@@ -21,7 +21,7 @@
             :class="{'item-image': !viewOne, 'item-image-one': viewOne}"
             id="gradeImg"
             v-if="item.grade === 'SR'"
-            @click="common.openModal(item.name, item.data)"
+            @click="checkType(item)"
         >
           <img class="new-item" src="../assets/img/icon/느낌표.png" alt="새 아이템" v-if="item.isNew">
           <span class="item-number" style="color: #fe0388; -webkit-text-stroke: 1px gray;">{{item.id}}</span>
@@ -32,7 +32,7 @@
             :class="{'item-image':! viewOne, 'item-image-one': viewOne}"
             id="gradeImg"
             v-if="item.grade === 'SSR'"
-            @click="common.openModal(item.name, item.data)"
+            @click="checkType(item)"
         >
           <img class="new-item" src="../assets/img/icon/느낌표.png" alt="새 아이템" v-if="item.isNew">
           <span class="item-number" style="color: #fedf03; -webkit-text-stroke: 1px gray;">{{item.id}}</span>
@@ -60,13 +60,24 @@ export default {
   setup(props) {
     const gradeImg = ref(null)
 
+    const checkType = (item) => {
+      if(item.type === 'text') {
+        common.openModal(item.name, item.data)
+      } else if (item.type === 'voice') {
+        common.openModal(item.name, item.data)
+      } else if (item.type === 'video') {
+        common.openModal(item.name, '<iframe src="' + item.url + '" width="1024" height="576" allow="autoplay"></iframe>')
+      }
+
+    }
+
     return {
       // 변수
       gradeImg,
       common,
 
       // 함수
-
+      checkType,
 
     }
   }

@@ -1,7 +1,7 @@
 <template>
-  <div class="wrap" id="screen" @click="">
+  <div class="wrap" id="screen" @click="goResult">
     <div class="effect-screen" id="lockerObj">
-      <img class="locker" id="lockerObjheader" src="../assets/img/icon/자물쇠%20아이콘.png" alt="자물쇠" @click="goResult"/>
+      <video src="@/assets/video/메이%20귀여운%20하품소리.mp4" id="effectVideo" autoplay @ended="goResult"></video>
     </div>
   </div>
 </template>
@@ -19,6 +19,8 @@ export default {
     let loading = false
     const wrap = ref(null)
 
+    const effectVideo = ref(null)
+
     const play = () => {
       // sound.currentSrc = 0
       const sound = new Audio(require('@/assets/audio/086_팝.mp3'))
@@ -29,14 +31,10 @@ export default {
       router.push('/result')
     }
 
-    onMounted(() => {
-      //Make the DIV element draggagle:
-      document.getElementById('screen').click()
-    })
-
     return {
       // 변수
       wrap,
+      effectVideo,
 
       // 메서드
       play,

@@ -9,13 +9,13 @@
         <GalleryItem v-for="item in itemList" :item="item" :key="item.id" :view-one="false"></GalleryItem>
       </div>
 
-      <div class="draw-one" v-if="gCount == 1"  v-for="item in itemList" :key="item.id">
+      <div class="draw-one" v-if="gCount == 1" v-for="item in itemList" :key="item.id">
         <GalleryItem v-for="item in itemList" :item="item" :key="item.id" :view-one="true"></GalleryItem>
       </div>
 
       <div class="nav-div">
-        <button @click="router.push('/draw')">돌아가기</button>
-        <button @click="reDraw">재뽑기</button>
+        <button class="back-btn" @click="router.push('/draw')"></button>
+        <button class="redraw-btn" @click="reDraw"></button>
       </div>
     </div>
   </div>
@@ -163,28 +163,12 @@ export default {
   border: 2.5px solid rgba(246,221,140, 0.9);
 }
 
-
-.grade-r {
-  background-image: url("@/assets/img/icon/gradeRCloseIco.png");
+.redraw-btn {
+  background-image: url("@/assets/img/button/다시뽑기.png");
 }
 
-.grade-sr {
-  background-image: url("@/assets/img/icon/gradeSRCloseIco.png");
+.back-btn {
+  background-image: url("@/assets/img/button/돌아가기.png");
 }
 
-.grade-ssr {
-  background-image: url("@/assets/img/icon/gradeSSRCloseIco.png");
-}
-
-.grade-r:hover {
-  background-image: url("@/assets/img/icon/gradeROpenIco.png");
-}
-
-.grade-sr:hover {
-  background-image: url("@/assets/img/icon/gradeSROpenIco.png");
-}
-
-.grade-ssr:hover {
-  background-image: url("@/assets/img/icon/gradeSSROpenIco.png");
-}
 </style>

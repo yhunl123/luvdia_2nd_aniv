@@ -65,15 +65,29 @@
 
 /*draw*/
 .draw-container {
-    padding: 30px;
-    width: 100%;
-    max-width: 500px;
     position: absolute;
     z-index: 2;
     top: 50%;
     display: flex;
     flex-direction: column;
-    align-items: stretch;
+    align-items: center;
+}
+
+.draw-banner {
+    width: 450px;
+}
+
+.rate-info {
+    margin-top: -10px;
+    margin-bottom: -10px;
+}
+
+.draw-btn {
+    z-index: 2;
+    top: 50%;
+    margin-top: 20px;
+    width: 230px;
+    cursor: pointer;
 }
 
 .sub-title {
@@ -300,6 +314,16 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    width: 100%;
+    height: auto;
+
+    overflow: hidden;
+}
+
+.effect-screen video {
+    width: 100%;
+    height: auto;
 }
 
 img.locker {
@@ -351,14 +375,37 @@ img.locker {
     margin-bottom: 50px;
 }
 
+.redraw-btn {
+    backface-visibility: hidden;
+    background-size: cover;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: 0px 0px;
+    border: none;
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+.back-btn {
+    backface-visibility: hidden;
+    background-size: cover;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: 0px 0px;
+    border: none;
+    cursor: pointer;
+    vertical-align: middle;
+}
+
 .nav-div{
     margin-top: 70px;
 }
 .nav-div button{
     padding: 15px;
-    margin-left: 50px;
-    margin-right: 50px;
-    width: 100px;
+    margin-left: 40px;
+    margin-right: 40px;
+    width: 170px;
+    height: 68px;
 }
 
 /*modal*/
@@ -367,7 +414,7 @@ img.locker {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 800px;
+    min-width: 800px;
     min-height: 500px;
     max-height: 800px;
     background-color: rgba(238, 238, 238, 0.9);
