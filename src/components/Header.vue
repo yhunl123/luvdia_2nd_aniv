@@ -10,7 +10,7 @@
       </div>
 
       <div class="goods-wrap">
-        <img src="../assets/logo.png"/>
+        <img src="@/assets/img/icon/마일리지2.png"/>
       </div>
       <div class="goods-wrap-txt">
         <span>{{ mPoint }}</span>

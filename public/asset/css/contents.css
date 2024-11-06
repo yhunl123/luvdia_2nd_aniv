@@ -74,20 +74,34 @@
 }
 
 .draw-banner {
-    width: 450px;
+    width: calc(23.46193952033368vw);
 }
 
 .rate-info {
     margin-top: -10px;
     margin-bottom: -10px;
+    width: calc(9.384775808133472vw);
+}
+
+.draw-btn-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .draw-btn {
-    z-index: 2;
-    top: 50%;
-    margin-top: 20px;
-    width: 230px;
+    width: calc(11.992vw);
     cursor: pointer;
+    margin: 15px;
+    margin-top: 30px;
+}
+
+.material-wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    justify-content: center;
 }
 
 .sub-title {
@@ -397,15 +411,46 @@ img.locker {
     vertical-align: middle;
 }
 
+.redraw-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* 이미지와 텍스트 사이의 간격 */
+    position: relative;
+    top: 55px;
+    justify-content: center;
+}
+
+.draw-text {
+    font-size: 20px;
+    color: white;
+}
+
+.mileage-wrap {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    right: 0;
+    top: 85%;
+    width: 150px;
+    height: 30px;
+    background-color: gray;
+    border-bottom-left-radius: 15px;
+    border-top-left-radius: 15px;
+}
+
 .nav-div{
+    display: flex;
     margin-top: 70px;
 }
+
 .nav-div button{
     padding: 15px;
     margin-left: 40px;
     margin-right: 40px;
     width: 170px;
     height: 68px;
+    font-family: ONE-Mobile-POP;
 }
 
 /*modal*/

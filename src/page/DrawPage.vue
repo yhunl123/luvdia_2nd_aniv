@@ -4,8 +4,23 @@
 
       <img class="draw-banner" src="@/assets/img/배너무지개2.png" alt="가챠배너">
       <img class="rate-info" src="@/assets/img/button/확률정보.png" alt="확률정보" @click="common.openModal('확률정보', rateInfo)">
-      <img class="draw-btn" src="@/assets/img/button/1회%20뽑기.png" alt="단차" @click="getDraw(1)">
-      <img class="draw-btn" src="@/assets/img/button/10회%20뽑기.png" alt="10연차" @click="getDraw(10)">
+      <div style="display: flex; width: calc(27.111574556830032vw)">
+        <div class="draw-btn-wrap">
+          <img class="draw-btn" src="@/assets/img/button/1회%20뽑기.png" alt="단차" @click="getDraw(1)">
+          <span class="material-wrap">
+            <img src="@/assets/logo.png" alt="럽다 로고" style="width: calc(2.607vw)">
+            <span class="draw-text">x 300</span>
+          </span>
+        </div>
+
+        <div class="draw-btn-wrap">
+          <img class="draw-btn" src="@/assets/img/button/10회%20뽑기.png" alt="10연차" @click="getDraw(10)">
+          <span class="material-wrap">
+            <img src="@/assets/logo.png" alt="럽다 로고" style="width: calc(2.607vw)">
+            <span class="draw-text">x 3000</span>
+          </span>
+        </div>
+      </div>
     </div>
 
   </div>

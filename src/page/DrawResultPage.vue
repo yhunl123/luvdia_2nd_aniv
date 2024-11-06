@@ -13,9 +13,20 @@
         <GalleryItem v-for="item in itemList" :item="item" :key="item.id" :view-one="true"></GalleryItem>
       </div>
 
+      <div class="mileage-wrap">
+        <img src="@/assets/img/icon/마일리지2.png" alt="마일리지">
+        <span class="draw-text">+ {{gCount}}</span>
+      </div>
+
       <div class="nav-div">
         <button class="back-btn" @click="router.push('/draw')"></button>
-        <button class="redraw-btn" @click="reDraw"></button>
+
+        <button class="redraw-btn" @click="reDraw">
+          <span class="redraw-logo">
+            <img src="@/assets/logo.png" alt="로고" style="width: 45px">
+            <span class="draw-text">x {{300*gCount}}</span>
+          </span>
+        </button>
       </div>
     </div>
   </div>
