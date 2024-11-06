@@ -1,5 +1,6 @@
 <template>
   <div class="wrap bg-img">
+    <audio id="bgMusic" :src="require('@/assets/audio/collection_bk_music.mp3')" @play="common.setVolume" autoplay :muted="muted" @ended="loop"></audio>
     <div class="item-box">
       <div class="tab-title"><span class="tab-text">도</span>감</div>
       <div class="item-list">
@@ -25,15 +26,23 @@
 <script>
 import GalleryItem from "@/components/GalleryItem.vue";
 import {item_r, item_sr, item_ssr} from "@/object/gachaItem";
-import {ref} from "vue";
+import {computed, ref} from "vue";
+import store from "@/store";
+import common from "@/js/common";
 
 export default {
   name: 'collection',
+  computed: {
+  },
   components: {
     GalleryItem
 
   },
   setup() {
+    const muted = computed(() => {
+      return store.state.muted;
+    })
+
     const myItem = ref(localStorage.getItem('myItem') === null || localStorage.getItem('myItem') === undefined ? [] : JSON.parse(localStorage.getItem('myItem')))
 
     if(myItem.value != []) {
@@ -65,14 +74,21 @@ export default {
       })
     }
 
+    const loop = (e) => {
+      e.target.play()
+      e.target.currentTime = 40.7
+    }
+
     return {
       // 함수
-
+      loop,
+      common,
 
       // 변수
       item_r,
       item_sr,
       item_ssr,
+      muted,
     }
   }
 }

@@ -1,5 +1,6 @@
 <template>
   <div class="wrap bg-img">
+    <audio id="bgMusic" :src="require('@/assets/audio/draw_bk_music.mp3')" :muted="muted" @play="common.setVolume" loop autoplay></audio>
     <div class="draw-container">
 
       <img class="draw-banner" src="@/assets/img/배너무지개2.png" alt="가챠배너">
@@ -32,7 +33,7 @@ import {Swiper, SwiperSlide} from "swiper/vue";
 import common from '@/js/common'
 
 import 'swiper/css/bundle';
-import {ref} from "vue";
+import {computed, ref} from "vue";
 import store from "@/store";
 
 export default {
@@ -42,6 +43,10 @@ export default {
     SwiperSlide,
   },
   setup() {
+    const muted = computed(() => {
+      return store.state.muted;
+    })
+
     let isLoading = false
     let pullCount = ref(localStorage.getItem('tCount') === undefined || localStorage.getItem('tCount') === null ? 0 : localStorage.getItem('tCount'))
     const rateInfo = '확률 정보에 대한 안내문입니다.<br>' +
@@ -94,6 +99,7 @@ export default {
       // 변수
       pullCount,
       rateInfo,
+      muted,
 
       // 메서드
       getDraw,

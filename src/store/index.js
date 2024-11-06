@@ -7,6 +7,8 @@ const store = createStore({
         modalIsOpen: false,
         isConfirmModal: false,
         mPoint: 0,
+        muted: false,
+        volume: 0.1,
     },
     getters: {
         modalTitle(state) {
@@ -23,6 +25,12 @@ const store = createStore({
         },
         mPoint(state) {
             return state.mPoint;
+        },
+        muted(state) {
+            return state.muted;
+        },
+        volume(state) {
+            return state.volume;
         }
     },
     mutations: {
@@ -40,6 +48,12 @@ const store = createStore({
         },
         setMPoint(state, value) {
             state.mPoint = value;
+        },
+        setMuted(state, value) {
+            state.muted = value;
+        },
+        setVolume(state, value) {
+            state.volume = value;
         }
     }
 })

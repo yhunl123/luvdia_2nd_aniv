@@ -4,15 +4,17 @@
 
     </div>
   </div>
-
+  <audio id="bgMusic" :src="require('@/assets/audio/main_bk_music.mp3')" loop autoplay @play="common.setVolume" :muted="muted"></audio>
   <Footer></Footer>
 </template>
 
 <script>
   import store from "@/store";
-  import {ref} from "vue";
+  import {computed, ref} from "vue";
   import Modal from "@/components/Modal.vue";
   import Footer from "@/components/Footer.vue";
+  import Store from "vuex";
+  import common from "@/js/common";
 
   export default {
     name: "MainPage",
@@ -25,6 +27,10 @@
       const pass2 = ref(0)
       const pass3 = ref(0)
       const pass4 = ref(0)
+
+      const muted = computed(() => {
+        return store.state.muted;
+      })
 
       const passProc = () => {
         if(pass1.value===1 && pass2.value===1 && pass3.value===1 && pass4.value===3) {
@@ -51,10 +57,12 @@
         pass2,
         pass3,
         pass4,
+        muted,
 
         // 메서드
         passProc,
         popClose,
+        common,
 
       }
     }

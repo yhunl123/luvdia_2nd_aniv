@@ -1,6 +1,10 @@
 import {item_r, item_sr, item_ssr} from '@/object/gachaItem'
 import store from "@/store";
-import {router} from "@/router";
+import {computed} from "vue";
+
+const volume = computed(() => {
+    return store.state.volume;
+})
 
 const draw = (num) => {
     let rate;
@@ -72,9 +76,14 @@ const openModal = (title, message) => {
     store.commit('setModalIsOpen', true)
 }
 
+const setVolume = (e) => {
+    e.target.volume = volume.value
+}
+
 export default {
     draw,
     checkNewItem,
     unlockItem,
-    openModal
+    openModal,
+    setVolume
 }
