@@ -11,6 +11,8 @@ const noticeText =
     '<br>' +
     '<span style="color: blue">출처 및 라이센스 표기</span><br>' +
     '<span style="font-size: 20px">홈버튼 : <a href="https://www.flaticon.com/kr/free-icon/home_5946261?term=%ED%99%88&page=1&position=53&origin=search&related_id=5946261" title="홈페이지 아이콘" target="_blank">홈페이지 아이콘 제작자: Creatype - Flaticon</a><br>' +
+    '<span style="font-size: 20px">볼륨 버튼 : <a href="https://www.flaticon.com/kr/free-icon/speaker_189650?related_id=189650&origin=pack" title="홈페이지 아이콘" target="_blank">홈페이지 아이콘 제작자: Creatype - Flaticon</a><br>' +
+    '<span style="font-size: 20px">음소거 버튼 : <a href="https://www.flaticon.com/kr/free-icon/mute_189653?term=%EC%9D%8C%EC%86%8C%EA%B1%B0&page=1&position=8&origin=search&related_id=189653" title="홈페이지 아이콘" target="_blank">홈페이지 아이콘 제작자: Creatype - Flaticon</a><br>' +
     '러브다이아 로고 : <a href="https://cafe.naver.com/s2dia" target="_blank" title="러브다이아 공식카페">러브다이아 공식카페</a></span><br>' +
     '<br>' +
     '본 사이트는 FHD해상도(1920x1080)에 최적화 되어있습니다.<br>' +
@@ -22,6 +24,10 @@ const noticeText =
     '또한 제작에 도움을 주신 금손 닉언밴님들과<br>' +
     '해당 컨텐츠를 기획하여 힘써주신 닉언밴님 모두에게 감사인사 드립니다.<br>' +
     '<br>' +
+    '해당 컨텐츠에 사용된 러브리아들의 편지는<br>' +
+    '<a href="https://rollingpaper.site/rolls/1061468" target="_blank">롤링페이퍼</a>에서 확인하실 수 있습니다.<br><br>' +
+    '영상편지의 경우는<br>' +
+    '<a href="https://drive.google.com/drive/folders/1zK5mKw3TVtyVyGbwYbZm1MPLAkmKi9v6" target="_blank">영상편지</a>에서 확인하실 수 있습니다.<br>' +
     '<br>' +
     '본 사이트에 대해 문의사항이 있는 경우.<br>' +
     '<a href="mailto:52latte.oe@gmail.com">52latte.oe@gmail.com</a> 으로 연락 바랍니다.<br>' +

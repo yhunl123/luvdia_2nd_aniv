@@ -455,86 +455,134 @@ const item_r = [
         unlocked: false,
         isNew: false
     },
-    // {
-    //     id: 35,
-    //     name: '러브리아의 편지 35',
-    //     url:'/',
-    //     data: '',
-    //     type: 'text',
-    //     grade: 'R',
-    //     unlocked: false,
-    //     isNew: false
-    // },
+    {
+        id: 35,
+        name: '러브리아의 편지 35',
+        url:'/',
+        data: '럽다 사랑해요우 축하해요우',
+        type: 'text',
+        grade: 'R',
+        unlocked: false,
+        isNew: false
+    },
+    {
+        id: 36,
+        name: '러브리아의 편지 36',
+        url:'/',
+        data: '2주년 축하해요<br> 저는 러브다이아를 안지 얼마 되지않았지만<br> 앞으로 함께할 나날들이 많으니 괜찮겠죠?<br> 앞으로도 힘내서 방송해주세요¡',
+        type: 'text',
+        grade: 'R',
+        unlocked: false,
+        isNew: false
+    },
+    {
+        id: 37,
+        name: '러브리아의 편지 37',
+        url:'/',
+        data: '데뷔 때 부터 지켜봐온 러브리아 입니다!!<br>' +
+            '벌써 럽다가 2주년??<br>' +
+            '1주년 한지 얼마 안된 것 같은데, 벌써 2주년 이라니!!<br>' +
+            '2주년 까지 많은 일이 많았지만, 다들 힘내주시고 열심히 해주시는 모습 보기 좋았어요!!<br>' +
+            '3주년, 4주년.. 그 이상까지 계속 방송해 주실꺼죠?<br>' +
+            '2주년 너무너무 축하드리고, 앞으로도 화이팅!!<br>' +
+            '재밌는 콘텐츠들 기대하고 있겠습니다!!<br>' +
+            '사랑한다 러브다이아!!!',
+        type: 'text',
+        grade: 'R',
+        unlocked: false,
+        isNew: false
+    },
+    {
+        id: 38,
+        name: '러브리아의 편지 38',
+        url:'/',
+        data: '2주년 너무너무 축하드립니다!<br>' +
+            '러브다이아가 2주년이 될 동안<br>' +
+            '학생이던 제가 사회인이 되었어요<br>' +
+            '<br>' +
+            '저도 럽다도 짧은 기간동안 많은게 바뀌었어요<br>' +
+            '하지만 럽다를 좋아하고 응원하는 마음만은 변하지 않았네요!<br>' +
+            '<br>' +
+            '이전에도 그랬고 앞으로도<br>' +
+            '러브리아로서 사랑할게요<br>' +
+            '우리 오래 만나요<br>' +
+            '❤️',
+        type: 'text',
+        grade: 'R',
+        unlocked: false,
+        isNew: false
+    },
+    {
+        id: 39,
+        name: '러브리아의 편지 39',
+        url:'/',
+        data: '벌써 2주년!<br>' +
+            '입덕하고서 러브다이아와 함께한 하루하루가 즐거웠어요.<br>' +
+            '즐거울 때도, 때론 슬플 때도 러브리아와 함께해준 하유님, 메이님, 리리님 모두 고마웠습니다.<br>' +
+            '앞으로 더 빛날 우리의 아이돌!<br>' +
+            '러브다이아를 계속해서 응원할게요!',
+        type: 'text',
+        grade: 'R',
+        unlocked: false,
+        isNew: false
+    },
 ]
 
 // SR 등급 오브젝트
 const item_sr = [
     {
         id: 1,
-        name: 'sampleSR1',
+        name: '컨텐츠 작업자의 편지 1',
         url:'/',
-        data: '1번 SR등급 편지입니다',
-        type: 'voice',
+        data: '1주년 축하하고 얼마 안 지난 것 같은데 어느새 2주년이 찾아왔네요!!<br>어떤 모습이든 열심히 응원할게요!!<br>' +
+            '<br>' +
+            '럽다 영원하라~',
+        type: 'text',
         grade: 'SR',
         unlocked: false,
         isNew: false
     },
     {
         id: 2,
-        name: 'sampleSR2',
+        name: '컨텐츠 작업자의 편지 2',
         url:'/',
-        data: '2번 SR등급 편지입니다',
-        type: 'voice',
+        data: '러브다이아의 2주년을 진심으로 축하드립니다!!!<br>' +
+            '제일 좋아하는 그룹이 어느새 2주년이 되었네요.<br>' +
+            '러브다이아가 시작하는 모습을 봐서 그런지 유난히 더 애정이 갑니다.<br>' +
+            '우리 러브다이아 앞으로도 쭈욱 롱런하고 행복했으면 좋겠습니다.<br>' +
+            '<br>' +
+            '러브다이아! 사랑해!!!',
+        type: 'text',
         grade: 'SR',
         unlocked: false,
         isNew: false
     },
     {
         id: 3,
-        name: 'sampleSR3',
+        name: '컨텐츠 작업자의 편지 3',
         url:'/',
         data: '3번 SR등급 편지입니다',
-        type: 'voice',
+        type: 'text',
         grade: 'SR',
         unlocked: false,
         isNew: false
     },
     {
         id: 4,
-        name: 'sampleSR4',
+        name: '컨텐츠 작업자의 편지 4',
         url:'/',
         data: '4번 SR등급 편지입니다',
-        type: 'voice',
+        type: 'text',
         grade: 'SR',
         unlocked: false,
         isNew: false
     },
     {
         id: 5,
-        name: 'sampleSR5',
+        name: '컨텐츠 작업자의 편지 5',
         url:'/',
         data: '5번 SR등급 편지입니다',
-        type: 'voice',
-        grade: 'SR',
-        unlocked: false,
-        isNew: false
-    },
-    {
-        id: 6,
-        name: 'sampleSR6',
-        url:'/',
-        data: '6번 SR등급 편지입니다',
-        type: 'voice',
-        grade: 'SR',
-        unlocked: false,
-        isNew: false
-    },
-    {
-        id: 7,
-        name: 'sampleSR7',
-        url:'/',
-        data: '7번 SR등급 편지입니다',
-        type: 'voice',
+        type: 'text',
         grade: 'SR',
         unlocked: false,
         isNew: false

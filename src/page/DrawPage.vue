@@ -1,6 +1,6 @@
 <template>
   <div class="wrap bg-img">
-    <audio id="bgMusic" :src="require('@/assets/audio/draw_bk_music.mp3')" :muted="muted" @play="common.setVolume" loop autoplay></audio>
+    <audio ref="bgMusic" :src="require('@/assets/audio/draw_bk_music.mp3')" :muted="muted || modalMuted" @play="common.setVolume" loop autoplay></audio>
     <div class="draw-container">
 
       <img class="draw-banner" src="@/assets/img/배너무지개2.png" alt="가챠배너">
@@ -33,7 +33,7 @@ import {Swiper, SwiperSlide} from "swiper/vue";
 import common from '@/js/common'
 
 import 'swiper/css/bundle';
-import {computed, ref} from "vue";
+import {computed, onMounted, onUnmounted, ref} from "vue";
 import store from "@/store";
 
 export default {
@@ -46,6 +46,10 @@ export default {
     const muted = computed(() => {
       return store.state.muted;
     })
+    const modalMuted = computed(() => {
+      return store.state.modalMuted;
+    })
+    const bgMusic = ref(null);
 
     let isLoading = false
     let pullCount = ref(localStorage.getItem('tCount') === undefined || localStorage.getItem('tCount') === null ? 0 : localStorage.getItem('tCount'))
@@ -57,15 +61,6 @@ export default {
         '본 컨텐츠의 편지들은 등급별로 중요도의 차이는 없으며<br>' +
         '컨텐츠로써의 연출임을 안내드립니다.<br>' +
         '여러분들 편지 모두 소중하며 도움에 감사드립니다.';
-
-    // 스와이퍼
-    const onSwiper = (swiper) => {
-      console.log(swiper);
-    };
-    const onSlideChange = () => {
-      console.log('slide change');
-    };
-    // 스와이퍼
 
     const getDraw = (num) => {
       if(isLoading) {
@@ -90,21 +85,30 @@ export default {
 
       localStorage.setItem('result', JSON.stringify(result))
 
+      store.commit('setCurrentPlayTime', bgMusic.value.currentTime)
+
       router.push('effect')
 
       isLoading = false
     }
+
+    onMounted(() => {
+      if(store.state.currentPlayTime !== 0) {
+        bgMusic.value.currentTime = store.state.currentPlayTime
+        store.commit('setCurrentPlayTime', 0)
+      }
+    })
 
     return {
       // 변수
       pullCount,
       rateInfo,
       muted,
+      modalMuted,
+      bgMusic,
 
       // 메서드
       getDraw,
-      onSwiper,
-      onSlideChange,
       common,
     }
   }

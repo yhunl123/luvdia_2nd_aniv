@@ -2,8 +2,8 @@ import {item_r, item_sr, item_ssr} from '@/object/gachaItem'
 import store from "@/store";
 import {computed} from "vue";
 
-const volume = computed(() => {
-    return store.state.volume;
+const bgMusicVolume = computed(() => {
+    return store.state.bgMusicVolume;
 })
 
 const draw = (num) => {
@@ -77,7 +77,7 @@ const openModal = (title, message) => {
 }
 
 const setVolume = (e) => {
-    e.target.volume = volume.value
+    e.target.volume = bgMusicVolume.value
 }
 
 export default {

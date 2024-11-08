@@ -2,7 +2,7 @@
   <div :class="{'content': !viewOne}">
 
     <div :class="{'container': !viewOne}">
-      <img :src="require('../assets/img/icon/notHaveItem.png')" class="item-image" v-if="!item.unlocked">
+      <img :src="require('../assets/img/icon/notHaveItem.png')" class="item-image" v-if="!item.unlocked" @click="openModal">
 
       <div :class="{'middle': !viewOne, 'middle-one': viewOne, 'middle-view': item.unlocked}" v-if="item.unlocked">
         <button
@@ -42,11 +42,37 @@
     </div>
 
   </div>
+
+
+  <div id="modal-background" v-if="confirmModalIsOpen || errorModalIsOpen"></div>
+  <div id="alert" class="confirm-modal" v-if="confirmModalIsOpen">
+    <div class="modal-body">
+      LP 100을 사용해<br>
+      이 편지를 잠금 해제하시겠습니까?
+    </div>
+
+    <div class="modal-footer">
+      <button class="confirm-btn" id="confirm" @click="closeModal">취소</button>
+      <button class="confirm-btn" id="confirm" @click="getItem">확인</button>
+    </div>
+  </div>
+
+  <div id="alert" class="confirm-modal" v-if="errorModalIsOpen">
+    <div class="modal-body">
+      <br>
+      LP가 부족합니다.
+    </div>
+
+    <div class="modal-footer">
+      <button class="confirm-btn" id="confirm" @click="closeErrorModal">확인</button>
+    </div>
+  </div>
 </template>
 
 <script>
 import {ref} from "vue";
 import common from '@/js/common'
+import store from "@/store";
 
 export default {
   name: "GalleryItem",
@@ -59,6 +85,8 @@ export default {
   },
   setup(props) {
     const gradeImg = ref(null)
+    const confirmModalIsOpen = ref(false)
+    const errorModalIsOpen = ref(false)
 
     const checkType = (item) => {
       if(item.type === 'text') {
@@ -67,17 +95,55 @@ export default {
         common.openModal(item.name, item.data)
       } else if (item.type === 'video') {
         common.openModal(item.name, '<iframe src="' + item.url + '" width="1024" height="576" allow="autoplay"></iframe>')
+        store.commit('setModalMuted', true)
       }
 
+    }
+
+    const openModal = () => {
+      confirmModalIsOpen.value = true;
+    }
+
+    const closeModal = () => {
+      confirmModalIsOpen.value = false;
+    }
+
+    const openErrorModal = () => {
+      errorModalIsOpen.value = true;
+    }
+
+    const closeErrorModal = () => {
+      errorModalIsOpen.value = false;
+    }
+
+    const getItem = () => {
+      if (store.state.mPoint < 100) {
+        closeModal()
+        openErrorModal()
+      } else {
+        const mPoint = store.state.mPoint
+
+        common.unlockItem(props.item)
+        store.commit("setMPoint", mPoint - 100)
+        localStorage.setItem('mPoint', String(mPoint - 100))
+        props.item.unlocked = true
+        closeModal()
+      }
     }
 
     return {
       // 변수
       gradeImg,
-      common,
+      confirmModalIsOpen,
+      errorModalIsOpen,
 
       // 함수
       checkType,
+      openModal,
+      closeModal,
+      closeErrorModal,
+      getItem,
+      common,
 
     }
   }

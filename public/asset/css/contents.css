@@ -205,6 +205,25 @@
     /*text-shadow: -5px 0px #000, 0px 5px #000, 5px 0px #000, 0px -5px #000;*/
 }
 
+.tab-notice {
+    position: absolute;
+
+    z-index: 2;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    color: #fff;
+    text-shadow: 6px 6px 6px rgba(0, 0, 0, 1);
+
+    transform: translate(260px, -45px);
+}
+
+.tab-notice-text {
+    color: #fff;
+    text-shadow: 6px 6px 6px rgba(0, 0, 0, 1);
+    /*text-shadow: -5px 0px #000, 0px 5px #000, 5px 0px #000, 0px -5px #000;*/
+}
+
 .item-sep {
     color: #fff;
     text-shadow: 6px 6px 6px rgba(0, 0, 0, 1);
@@ -470,6 +489,27 @@ img.locker {
     animation: fadeIn 0.2s ease-out;
 
     display: flex;
+    flex-direction: column; /* 자식 요소들을 세로로 배치 */
+
+    overflow: hidden;
+    scroll-behavior: smooth;
+}
+
+.confirm-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: 250px;
+    background-color: rgba(238, 238, 238, 0.9);
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    align-items: center;
+    text-align: center;
+    animation: fadeIn 0.2s ease-out;
+
     flex-direction: column; /* 자식 요소들을 세로로 배치 */
 
     overflow: hidden;

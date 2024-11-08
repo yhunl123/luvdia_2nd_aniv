@@ -1,8 +1,9 @@
 <template>
   <div class="wrap bg-img">
-    <audio id="bgMusic" :src="require('@/assets/audio/collection_bk_music.mp3')" @play="common.setVolume" autoplay :muted="muted" @ended="loop"></audio>
+    <audio id="bgMusic" :src="require('@/assets/audio/collection_bk_music.mp3')" @play="common.setVolume" autoplay :muted="muted || modalMuted" @ended="loop"></audio>
     <div class="item-box">
       <div class="tab-title"><span class="tab-text">도</span>감</div>
+      <div class="tab-notice"><span class="tab-notice-text">! LP 100개를 사용해 잠겨있는 편지 하나를 해금할 수 있습니다.</span></div>
       <div class="item-list">
         <span class="item-sep">R</span><hr>
         <div class="r-grade">
@@ -41,6 +42,9 @@ export default {
   setup() {
     const muted = computed(() => {
       return store.state.muted;
+    })
+    const modalMuted = computed(() => {
+      return store.state.modalMuted;
     })
 
     const myItem = ref(localStorage.getItem('myItem') === null || localStorage.getItem('myItem') === undefined ? [] : JSON.parse(localStorage.getItem('myItem')))
@@ -89,6 +93,7 @@ export default {
       item_sr,
       item_ssr,
       muted,
+      modalMuted,
     }
   }
 }

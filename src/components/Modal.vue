@@ -24,6 +24,10 @@ import store from "@/store";
 export default {
   name: "Modal",
   props: {
+    color: {
+      type: String,
+      default: 'sr'
+    }
   },
   emits: ['popClose'],
   setup() {
@@ -45,6 +49,7 @@ export default {
     })
 
     const close = () => {
+      store.commit('setModalMuted', false)
       store.commit('setModalIsOpen', false);
     }
 

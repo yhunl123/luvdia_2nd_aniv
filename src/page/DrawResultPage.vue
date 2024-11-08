@@ -1,4 +1,11 @@
 <template>
+  <audio ref="bgMusic" :src="require('@/assets/audio/draw_bk_music.mp3')" :muted="muted || modalMuted" @play="common.setVolume" loop autoplay></audio>
+
+  <div class="audio-control-wrap">
+    <img src="../assets/img/icon/free-icon-speaker-189650.png" alt="음소거버튼" v-if="!muted && !modalMuted" @click="toggleMute(true)">
+    <img src="../assets/img/icon/free-icon-mute-189653.png" alt="음소거해제버튼" v-if="muted || modalMuted" @click="toggleMute(false)">
+  </div>
+
   <div class="wrap bg-img" :class="{'bk-img-r': highGrade==='R', 'bk-img-sr': highGrade==='SR', 'bk-img-ssr': highGrade==='SSR'}">
     <div class="result-div">
       <div
@@ -35,7 +42,7 @@
 <script>
 import {router} from "@/router";
 import common from "@/js/common";
-import {ref} from "vue";
+import {computed, onBeforeUnmount, onMounted, onUnmounted, ref} from "vue";
 import store from "@/store";
 import {item_r, item_sr, item_ssr} from "@/object/gachaItem";
 import GalleryItem from "@/components/GalleryItem.vue";
@@ -49,9 +56,17 @@ export default {
 
   },
   setup() {
+    const muted = computed(() => {
+      return store.state.muted;
+    })
+    const modalMuted = computed(() => {
+      return store.state.modalMuted;
+    })
+
     let isLoading = false
     let pullCount = ref(localStorage.getItem('tCount') === undefined || localStorage.getItem('tCount') === null ? 0 : localStorage.getItem('tCount'))
     const highGrade = ref('R')
+    const bgMusic = ref(null)
     const results = JSON.parse(localStorage.getItem('result'))
     const gCount = localStorage.getItem('gCount')
 
@@ -125,8 +140,22 @@ export default {
       })
     }
 
+    const toggleMute = (flag) => {
+      store.commit('setMuted', flag)
+    }
+
     getItemList()
     getHighGrade()
+
+    onMounted(() => {
+      bgMusic.value.currentTime = store.state.currentPlayTime;
+
+      store.commit('setCurrentPlayTime', 0)
+    })
+
+    onBeforeUnmount(() => {
+      store.commit('setCurrentPlayTime', bgMusic.value.currentTime)
+    })
 
     return {
       // 변수
@@ -134,9 +163,14 @@ export default {
       itemList,
       gCount,
       highGrade,
+      muted,
+      modalMuted,
+      bgMusic,
 
       // 함수
       reDraw,
+      toggleMute,
+      common,
 
     }
   }

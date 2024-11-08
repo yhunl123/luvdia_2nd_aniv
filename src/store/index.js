@@ -8,7 +8,9 @@ const store = createStore({
         isConfirmModal: false,
         mPoint: 0,
         muted: false,
-        volume: 0.1,
+        modalMuted: false,
+        currentPlayTime: 0,
+        bgMusicVolume: 0.05,
     },
     getters: {
         modalTitle(state) {
@@ -29,9 +31,15 @@ const store = createStore({
         muted(state) {
             return state.muted;
         },
-        volume(state) {
-            return state.volume;
-        }
+        modalMuted(state) {
+            return state.modalMuted;
+        },
+        currentPlayTime(state) {
+            return state.currentPlayTime;
+        },
+        bgMusicVolume(state) {
+            return state.bgMusicVolume;
+        },
     },
     mutations: {
         setModalTitle(state, value) {
@@ -52,9 +60,15 @@ const store = createStore({
         setMuted(state, value) {
             state.muted = value;
         },
-        setVolume(state, value) {
-            state.volume = value;
-        }
+        setModalMuted(state, value) {
+            state.modalMuted = value;
+        },
+        setCurrentPlayTime(state, value) {
+            state.currentPlayTime = value;
+        },
+        setBgMusicVolume(state, value) {
+            state.bgMusicVolume = value;
+        },
     }
 })
 

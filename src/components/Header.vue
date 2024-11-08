@@ -18,12 +18,17 @@
     </div>
   </div>
 
+  <div class="audio-control-wrap" v-if="hasHeader">
+    <img src="../assets/img/icon/free-icon-speaker-189650.png" alt="음소거버튼" v-if="!muted && !modalMuted" @click="toggleMute(true)">
+    <img src="../assets/img/icon/free-icon-mute-189653.png" alt="음소거해제버튼" v-if="muted || modalMuted" @click="toggleMute(false)">
+  </div>
+
   <Modal></Modal>
 </template>
 
 <script>
 import {router} from "@/router";
-import {ref} from "vue";
+import {computed, ref} from "vue";
 import {useRoute} from "vue-router";
 import store from "@/store";
 import Modal from "@/components/Modal.vue";
@@ -51,7 +56,19 @@ export default {
       '/draw',
     ]
 
+    const muted = computed(() => {
+      return store.state.muted;
+    })
+
+    const modalMuted = computed(() => {
+      return store.state.modalMuted;
+    })
+
     const mPoint = ref(localStorage.getItem('mPoint') ? localStorage.getItem('mPoint') : 0)
+
+    const toggleMute = (flag) => {
+      store.commit('setMuted', flag)
+    }
 
     hasHeader.value = hasHeaderList.includes(useRoute().fullPath);
     hasHomeBtn.value = hasHomeList.includes(useRoute().fullPath);
@@ -62,9 +79,12 @@ export default {
       mPoint,
       hasHeader,
       hasHomeBtn,
-      router
+      router,
+      muted,
+      modalMuted,
 
       //함수
+      toggleMute,
 
     }
   },
