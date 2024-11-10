@@ -560,6 +560,22 @@ const item_r = [
         unlocked: false,
         isNew: false
     },
+    {
+        id: 42,
+        name: '러브리아의 편지 42',
+        url:'/',
+        data: '러브다이아를 알게 된지는 오래 되지 않았지만 2주년 진심으로 축하드립니다!!!<br>' +
+            '저의 일상에 가장 힘들때 찾아와 가장 밝게 빛나는 별이 되어 주셔서 감사해요!!!<br>' +
+            '이제는 러브다이아가 없는 삶은 상상이 안가요. 그러니까 우리 10년 20년 30년 40년 50년 쭉 계속 같이 있어요.<br>' +
+            '<br>' +
+            '이렇게 말하지만 슬프게도 어느 순간 헤어지는 순간이 오겠죠... 헤어져도 저의 영원한 별이에요. 같이 함께한 추억을 아름답게 고이고이 간직하고 있을게요. 항상 아름답고 마음이 따뜻하신 러브다이아 항상 사랑해요!<br>' +
+            '<br>' +
+            'ㅂㅎㅇ ㄱㅇㅇ',
+        type: 'text',
+        grade: 'R',
+        unlocked: false,
+        isNew: false
+    },
 ]
 
 // SR 등급 오브젝트
@@ -586,36 +602,6 @@ const item_sr = [
             '우리 러브다이아 앞으로도 쭈욱 롱런하고 행복했으면 좋겠습니다.<br>' +
             '<br>' +
             '러브다이아! 사랑해!!!',
-        type: 'text',
-        grade: 'SR',
-        unlocked: false,
-        isNew: false
-    },
-    {
-        id: 3,
-        name: '컨텐츠 작업자의 편지 3',
-        url:'/',
-        data: '3번 SR등급 편지입니다',
-        type: 'text',
-        grade: 'SR',
-        unlocked: false,
-        isNew: false
-    },
-    {
-        id: 4,
-        name: '컨텐츠 작업자의 편지 4',
-        url:'/',
-        data: '4번 SR등급 편지입니다',
-        type: 'text',
-        grade: 'SR',
-        unlocked: false,
-        isNew: false
-    },
-    {
-        id: 5,
-        name: '컨텐츠 작업자의 편지 5',
-        url:'/',
-        data: '5번 SR등급 편지입니다',
         type: 'text',
         grade: 'SR',
         unlocked: false,
