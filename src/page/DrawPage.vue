@@ -54,9 +54,9 @@ export default {
     let isLoading = false
     let pullCount = ref(localStorage.getItem('tCount') === undefined || localStorage.getItem('tCount') === null ? 0 : localStorage.getItem('tCount'))
     const rateInfo = '확률 정보에 대한 안내문입니다.<br>' +
-        '<span style="color: #03f0fe">R</span> : 80%<br>' +
-        '<span style="color: #fe0388">SR</span> : 16%<br>' +
-        '<span style="color: #fedf03">SSR</span> : 4%<br>' +
+        '<span style="color: #03f0fe">R</span> : 88%<br>' +
+        '<span style="color: #fe0388">SR</span> : 10%<br>' +
+        '<span style="color: #fedf03">SSR</span> : 2%<br>' +
         '<br>' +
         '본 컨텐츠의 편지들은 등급별로 중요도의 차이는 없으며<br>' +
         '컨텐츠로써의 연출임을 안내드립니다.<br>' +

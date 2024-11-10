@@ -4,6 +4,7 @@ const store = createStore({
     state: {
         modalTitle: '',
         modalMessage: '',
+        modalHeader: true,
         modalIsOpen: false,
         isConfirmModal: false,
         mPoint: 0,
@@ -18,6 +19,9 @@ const store = createStore({
         },
         modalMessage(state) {
             return state.modalMessage;
+        },
+        modalHeader(state) {
+            return state.modalHeader;
         },
         modalIsOpen(state) {
             return state.modalIsOpen;
@@ -47,6 +51,9 @@ const store = createStore({
         },
         setModalMessage(state, value) {
             state.modalMessage = value;
+        },
+        setModalHeader(state, value) {
+            state.modalHeader = value;
         },
         setModalIsOpen(state, value) {
             state.modalIsOpen = value;

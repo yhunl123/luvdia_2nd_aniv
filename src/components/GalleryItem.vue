@@ -73,6 +73,7 @@
 import {ref} from "vue";
 import common from '@/js/common'
 import store from "@/store";
+import {useRoute} from "vue-router";
 
 export default {
   name: "GalleryItem",
@@ -84,6 +85,8 @@ export default {
     }
   },
   setup(props) {
+    const route = useRoute()
+
     const gradeImg = ref(null)
     const confirmModalIsOpen = ref(false)
     const errorModalIsOpen = ref(false)
@@ -96,6 +99,10 @@ export default {
       } else if (item.type === 'video') {
         common.openModal(item.name, '<iframe src="' + item.url + '" width="1024" height="576" allow="autoplay"></iframe>')
         store.commit('setModalMuted', true)
+
+        if(route.name === 'result') {
+          store.commit('setModalHeader', false)
+        }
       }
 
     }

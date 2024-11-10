@@ -18,9 +18,9 @@ const draw = (num) => {
             id: '',
         }
 
-        if (rate > 0 && rate < 81) {
+        if (rate > 0 && rate < 89) {
             item.grade = 'R'
-        } else if (rate >= 81 && rate < 97) {
+        } else if (rate >= 89 && rate < 99) {
             item.grade = 'SR'
         } else  {
             item.grade = 'SSR'

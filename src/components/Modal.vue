@@ -2,7 +2,7 @@
   <div id="modal-background" v-if="modalIsOpen"></div>
 
   <div id="alert" class="modal" v-if="modalIsOpen">
-    <div class="modal-header">
+    <div class="modal-header" v-if="modalHeader">
       {{ modalTitle }}
     </div>
 
@@ -24,20 +24,23 @@ import store from "@/store";
 export default {
   name: "Modal",
   props: {
-    color: {
+    grade: {
       type: String,
-      default: 'sr'
+      default: ''
     }
   },
   emits: ['popClose'],
   setup() {
-
     const modalTitle = computed(() => {
       return store.state.modalTitle;
     })
 
     const modalMessage = computed(() => {
       return store.state.modalMessage;
+    })
+
+    const modalHeader = computed(() => {
+      return store.state.modalHeader;
     })
 
     const modalIsOpen = computed(() => {
@@ -51,16 +54,18 @@ export default {
     const close = () => {
       store.commit('setModalMuted', false)
       store.commit('setModalIsOpen', false);
+      store.commit('setModalHeader', true);
     }
 
     return {
       // 변수
-
-      // 함수
       modalTitle,
       modalMessage,
       modalIsOpen,
+      modalHeader,
       isConfirmModal,
+
+      // 함수
       close,
 
     }
