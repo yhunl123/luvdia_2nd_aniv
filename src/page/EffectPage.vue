@@ -1,7 +1,7 @@
 <template>
   <div class="wrap" id="screen" @click="goResult">
     <div class="effect-screen" id="lockerObj">
-      <video src="@/assets/video/메이%20귀여운%20하품소리.mp4" id="effectVideo" autoplay @ended="goResult"></video>
+      <video ref="effectVideo" autoplay @ended="goResult"></video>
     </div>
   </div>
 </template>
@@ -9,6 +9,7 @@
 <script>
 import {ref, onMounted} from "vue";
 import {router} from "@/router";
+import {item_r, item_sr, item_ssr} from "@/object/gachaItem";
 
 export default {
   name: "EffectPage",
@@ -16,8 +17,11 @@ export default {
 
   },
   setup() {
-    let loading = false
     const wrap = ref(null)
+
+    const itemList = ref([])
+    const highGrade = ref('R')
+    const results = JSON.parse(localStorage.getItem('result'))
 
     const effectVideo = ref(null)
 
@@ -30,6 +34,56 @@ export default {
     const goResult = () => {
       router.push('/result')
     }
+
+    const getItemList = () => {
+      results.forEach((result) => {
+        if (result.grade === 'R') {
+          itemList.value.push(item_r.find((item) => item.id === result.id))
+        } else if (result.grade === 'SR') {
+          itemList.value.push(item_sr.find((item) => item.id === result.id))
+        } else {
+          itemList.value.push(item_ssr.find((item) => item.id === result.id))
+        }
+
+        if (result.isNew) {
+          itemList.value[itemList.value.length-1].isNew = true
+        }
+      })
+
+      itemList.value.map((itemOne) => {
+        itemOne.unlocked = true
+      })
+    }
+
+    const getHighGrade = () => {
+      debugger
+      itemList.value.forEach((itemOne) => {
+        if (itemOne.grade === 'SSR') {
+          highGrade.value = 'SSR'
+        } else if (itemOne.grade === 'SR') {
+          if (highGrade.value !== 'SSR') {
+            highGrade.value = 'SR'
+          }
+        }
+      })
+    }
+
+    const setVideoUrl = () => {
+      if(highGrade.value === 'SSR') {
+        effectVideo.value.src = require('@/assets/video/ssr.mp4')
+      } else if (highGrade.value === 'SR') {
+        effectVideo.value.src = require('@/assets/video/sr.mp4')
+      } else {
+        effectVideo.value.src = require('@/assets/video/r.mp4')
+      }
+    }
+
+    getItemList()
+    getHighGrade()
+
+    onMounted(() => {
+      setVideoUrl()
+    })
 
     return {
       // 변수
