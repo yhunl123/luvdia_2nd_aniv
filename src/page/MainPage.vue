@@ -10,7 +10,7 @@
 
 <script>
   import store from "@/store";
-  import {computed, ref} from "vue";
+  import {computed} from "vue";
   import Modal from "@/components/Modal.vue";
   import Footer from "@/components/Footer.vue";
   import common from "@/js/common";

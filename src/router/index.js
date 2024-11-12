@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
 // 연결할 각 컴포넌트 import (src/views폴더 아래 컴포넌트들 생성해둠)
+import RoutePage from "@/page/RoutePage.vue";
 import EffectPage from '../page/EffectPage.vue'
 import MainPage from '../page/MainPage.vue'
 import DrawPage from "../page/DrawPage.vue";

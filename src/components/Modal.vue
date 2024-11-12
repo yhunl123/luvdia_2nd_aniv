@@ -2,8 +2,8 @@
   <div id="modal-background" v-if="modalIsOpen"></div>
 
   <div id="alert" class="modal" v-if="modalIsOpen">
-    <div class="modal-header" v-if="modalHeader">
-      {{ modalTitle }}
+    <div class="modal-header" v-if="modalHeader" v-html="modalTitle">
+
     </div>
 
     <div class="modal-body" v-html="modalMessage">

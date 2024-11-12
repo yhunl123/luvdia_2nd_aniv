@@ -1,5 +1,5 @@
 <template>
-  <audio :src="require('@/assets/audio/Gacha_impact_1.mp3')" autoplay></audio>
+  <audio :src="require('@/assets/audio/Gacha_impact_1.mp3')" autoplay @play="common.setVolume"></audio>
   <audio ref="bgMusic" :src="require('@/assets/audio/draw_bk_music.mp3')" :muted="muted || modalMuted" @play="common.setVolume" loop autoplay></audio>
 
   <div class="audio-control-wrap">

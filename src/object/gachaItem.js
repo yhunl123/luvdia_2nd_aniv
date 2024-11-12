@@ -576,6 +576,16 @@ const item_r = [
         unlocked: false,
         isNew: false
     },
+    {
+        id: 43,
+        name: '러브리아의 편지 43',
+        url:'/',
+        data: '1주년 축하하고 얼마 안 지난 것 같은데 어느새 2주년이 찾아왔네요!!<br>어떤 모습이든 열심히 응원할게요!!',
+        type: 'text',
+        grade: 'R',
+        unlocked: false,
+        isNew: false
+    },
 ]
 
 // SR 등급 오브젝트
@@ -583,18 +593,6 @@ const item_sr = [
     {
         id: 1,
         name: '컨텐츠 작업자의 편지 1',
-        url:'/',
-        data: '1주년 축하하고 얼마 안 지난 것 같은데 어느새 2주년이 찾아왔네요!!<br>어떤 모습이든 열심히 응원할게요!!<br>' +
-            '<br>' +
-            '럽다 영원하라~',
-        type: 'text',
-        grade: 'SR',
-        unlocked: false,
-        isNew: false
-    },
-    {
-        id: 2,
-        name: '컨텐츠 작업자의 편지 2',
         url:'/',
         data: '러브다이아의 2주년을 진심으로 축하드립니다!!!<br>' +
             '제일 좋아하는 그룹이 어느새 2주년이 되었네요.<br>' +
@@ -607,12 +605,83 @@ const item_sr = [
         unlocked: false,
         isNew: false
     },
+    {
+        id: 2,
+        name: '컨텐츠 작업자의 편지 2',
+        url:'/',
+        data: '헬로 러브다이아.<br>' +
+            '2주년을 맞이한걸 정말 축하해요!<br>' +
+            '지난 1년 원했던 모든걸 이루셨기를 바라며<br>' +
+            '내년 1년도 승승장구하는 러브다이아가 되기를!<br>' +
+            '러브다이아 항상 아끼고 사랑해요~<br>' +
+            '80주년 90주년까지도 함께할거에요..!<br>' +
+            '<br>' +
+            '모두 건강히 오래오래 봐요!!!',
+        type: 'text',
+        grade: 'SR',
+        unlocked: false,
+        isNew: false
+    },
+    {
+        id: 3,
+        name: '컨텐츠 작업자의 편지 3',
+        url:'/',
+        data: '러브다이아 2주년을 진심으로 축하드립니다!<br>' +
+            '<br>' +
+            '힘든 일들이 있었을 때 럽다가 정말 많은 힘이 돼주었던 거 같아요.<br>' +
+            '<br>' +
+            '항상 감사하고 앞으로도 좋은 일 가득 함께 할 수 있으면 좋겠어요:)',
+        type: 'text',
+        grade: 'SR',
+        unlocked: false,
+        isNew: false
+    },
+    {
+        id: 4,
+        name: '컨텐츠 기획자의 편지 1',
+        url:'/',
+        data: '럽다의 2주년을 축하드려요!!~🎉🎉<br>' +
+            '<br>' +
+            '언제나 웃음주시고 항상 힘이 되어주시는 럽다 여러분들을 위해,<br>' +
+            '조금이라도 보답드리고자 1주년에 이어,이렇게 2주년에도 축하드리기위해 기획을 하게되었네요 :)<br>' +
+            '<br>' +
+            '부디, 럽다 여러분들을 위해 전달드리는 저희들의 편지를 받고 힘이 되었으면 좋겠어요 ♡⸜(ˆᗜˆ)<br>' +
+            '항상 하고싶으신일들 모두 잘 되길 바라며, 노력하시는 럽다 여러분들을 응원합니다!<br>' +
+            '앞으로도 아프지않고 오래오래 함께하길 바래요~<br>' +
+            '<br>' +
+            '다시 한 번 러브다이아의 2주년을 진심으로 축하합니다!!!<br>' +
+            '럽다 뽀에버 ♡⸜(˶˃ ᵕ ˂˶)⸝♡ 사랑합니다~!!',
+        type: 'text',
+        grade: 'SR',
+        unlocked: false,
+        isNew: false
+    },
 ]
 
 // SSR 등급 오브젝트
 const item_ssr = [
     {
         id: 1,
+        name: '<span style="color: #ff9c00;">수퍼 초인 샤벨 토냐님의 편지</span>',
+        url:'',
+        data: '하유님 메이님 리리님! 오랜만이에요!!!!<br>' +
+            '벌써 럽다도 2주년이 되었네요!<br>' +
+            '시간 참 빠르죠 ㅋㅋㅋ 저도 벌써 3주년이 다가오고 있답니다....<br>' +
+            '그간 플랫폼 문제도 있었고 아쉽게도 이제는 더 이상 5명이 있는 럽다가 아니게 되었지만<br>' +
+            '항상 너머에서 응원하고 있었어요!<br>' +
+            '직접적으로 도움드릴 수 있는 일이 있었다면 참 좋았겠지만<br>' +
+            '그래도 잘 헤쳐나가신 것 같아서 너무 다행입니다 히히' +
+            '앞으로도 계속 오래오래 함께 활동할 수 있었으면 좋겠어요!<br>' +
+            '<span style="font-weight: bold">졸업절대막아절대지켜!!!!!!</span><br>' +
+            '요즘 너무 바빠서 자주 연락도 못드리고 했는데 조만간 또 같이 게임하거나 밥먹으러 가요!!!!<br>' +
+            '앞으로의 럽다도 즐겁고 행복한 일만 가득하길 진심으로 바랍니다 사랑해요!!!!!',
+        type: 'text',
+        grade: 'SSR',
+        unlocked: false,
+        isNew: false
+    },
+    {
+        id: 2,
         name: '반님의 영상편지',
         url:'https://drive.google.com/file/d/1b5dFYvR8h69cLW_2TWLaFG2qUm7V58Od/preview',
         data: '스타데이즈 반님의 영상편지입니다.',
@@ -622,7 +691,7 @@ const item_ssr = [
         isNew: false
     },
     {
-        id: 2,
+        id: 3,
         name: '테리님의 영상편지',
         url:'https://drive.google.com/file/d/1TPRrk9Egl3SVwf466iqDz_Ql5NXTFtBr/preview',
         data: '스타데이즈 테리님의 영상편지입니다.',
@@ -632,7 +701,7 @@ const item_ssr = [
         isNew: false
     },
     {
-        id: 3,
+        id: 4,
         name: '나츠키님의 영상편지',
         url:'https://drive.google.com/file/d/12LPcWhamV1uu095Hk5rvVTB78_tMQKpG/preview',
         data: '스타데이즈 나츠키님의 영상편지입니다.',
@@ -642,7 +711,7 @@ const item_ssr = [
         isNew: false
     },
     {
-        id: 4,
+        id: 5,
         name: '류채경님의 영상편지',
         url:'https://drive.google.com/file/d/1YGykLzEyirjV6q0_dkWKX9mnJAWiH2gq/preview',
         data: '스타게이저의 류채경님의 영상편지입니다.',

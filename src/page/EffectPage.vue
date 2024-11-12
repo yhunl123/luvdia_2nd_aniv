@@ -1,7 +1,7 @@
 <template>
   <div class="wrap" id="screen" @click="goResult">
     <div class="effect-screen" id="lockerObj">
-      <video ref="effectVideo" autoplay @ended="goResult"></video>
+      <video ref="effectVideo" autoplay @ended="goResult" @play="common.setVolume"></video>
     </div>
   </div>
 </template>
@@ -10,9 +10,15 @@
 import {ref, onMounted} from "vue";
 import {router} from "@/router";
 import {item_r, item_sr, item_ssr} from "@/object/gachaItem";
+import common from "@/js/common";
 
 export default {
   name: "EffectPage",
+  computed: {
+    common() {
+      return common
+    }
+  },
   components: {
 
   },
