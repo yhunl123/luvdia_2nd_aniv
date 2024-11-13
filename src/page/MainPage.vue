@@ -39,9 +39,8 @@
 
         if (isFirst === 'Y') {
           common.openModal('안 내 문', noticeText)
+          localStorage.setItem('isFirst', 'N')
         }
-
-        localStorage.setItem('isFirst', 'N')
       }
 
       firstCome()

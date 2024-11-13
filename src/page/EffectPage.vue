@@ -42,6 +42,12 @@ export default {
     }
 
     const getItemList = () => {
+      console.log(results)
+      if (results == null) {
+        router.push('/draw')
+        return
+      }
+
       results.forEach((result) => {
         if (result.grade === 'R') {
           itemList.value.push(item_r.find((item) => item.id === result.id))
