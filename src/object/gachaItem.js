@@ -586,6 +586,33 @@ const item_r = [
         unlocked: false,
         isNew: false
     },
+    {
+        id: 44,
+        name: '러브리아의 편지 44',
+        url:'/',
+        data: '러브다이아의 2주년을 진심으로 축하드립니다!!!<br>' +
+            '제일 좋아하는 그룹이 어느새 2주년이 되었네요.<br>' +
+            '러브다이아가 시작하는 모습을 봐서 그런지 유난히 더 애정이 갑니다.<br>' +
+            '우리 러브다이아 앞으로도 쭈욱 롱런하고 행복했으면 좋겠습니다.<br>' +
+            '<br>' +
+            '러브다이아! 사랑해!!!',
+        type: 'text',
+        grade: 'R',
+        unlocked: false,
+        isNew: false
+    },
+    {
+        id: 45,
+        name: '러브리아의 편지 45',
+        url:'/',
+        data: '데뷔방송 하신게 얼마전 같은데 벌서 1주년을 지나 2주년이 돌아왔네요!<br>' +
+            '<br>' +
+            '앞으로도 러브리아들과 함께 좋은날 보내며 행복하게 3주년, 5주년, 10년까지 기원합니다!',
+        type: 'text',
+        grade: 'R',
+        unlocked: false,
+        isNew: false
+    },
 ]
 
 // SR 등급 오브젝트
@@ -594,12 +621,25 @@ const item_sr = [
         id: 1,
         name: '컨텐츠 작업자의 편지 1',
         url:'/',
-        data: '러브다이아의 2주년을 진심으로 축하드립니다!!!<br>' +
-            '제일 좋아하는 그룹이 어느새 2주년이 되었네요.<br>' +
-            '러브다이아가 시작하는 모습을 봐서 그런지 유난히 더 애정이 갑니다.<br>' +
-            '우리 러브다이아 앞으로도 쭈욱 롱런하고 행복했으면 좋겠습니다.<br>' +
+        data: '러브다이아 2주년 축하해요~!!!!!!!<br>' +
             '<br>' +
-            '러브다이아! 사랑해!!!',
+            '하루하루 너무 즐겁게 보고있습니다!<br>' +
+            '<br>' +
+            '기획자 닉언밴님께서 사이트를 하나 만들어보자고 하셔서<br>' +
+            '이렇게 컨텐츠 제작에 웹 개발자로써 참여하게 되었네요!<br>' +
+            '<br>' +
+            '그런데 제가 주로 백엔드나 서버, 프론트 스크립트를 주로 다루는 사람인데 반해<br>' +
+            '이번 컨텐츠에서 가장 중요한 점이 웹디자인과 CSS인 점에서<br>' +
+            '사실 굉장히 어려운 작업이었습니다.<br>' +
+            '<br>' +
+            '하지만 하나씩 찾아가면서 모양을 만들어가는 게<br>' +
+            '마치 러브다이아가 처음 데뷔를 하고<br>' +
+            '시간이 지나면서 지금의 모습으로 만들어지는 과정처럼 느껴져서<br>' +
+            '굉장히 즐거운 작업시간 이었습니다.<br>' +
+            '<br>' +
+            '앞으로도 좋은 방송 좋은 시간 보냈으면 좋겠습니다.<br>' +
+            '<br>' +
+            '러브다이아 여러분과 러브리아 모두 화이팅입니다!',
         type: 'text',
         grade: 'SR',
         unlocked: false,
@@ -656,6 +696,122 @@ const item_sr = [
         unlocked: false,
         isNew: false
     },
+    {
+        id: 5,
+        name: '컨텐츠 작업자의 편지 4',
+        url:'/',
+        data: '러브다이아 2주년을 축하해요! 🎉<br>' +
+            '1년 동안 응원해온 팬으로서 러브다이아의 성장과 함께한 시간들이 정말 소중했을 것 같아요.<br>' +
+            '멤버들의 매력 넘치는 모습과 멋진 퍼포먼스 덕분에 매일이 행복했죠.<br>' +
+            '앞으로도 러브다이아가 계속해서 반짝이는 순간들을 만들어가길 바라며,<br>' +
+            '언제나 든든한 팬으로 응원할게요!<br>' +
+            '2주년 축하해요, 더 많은 추억 쌓아가요! 💖',
+        type: 'text',
+        grade: 'SR',
+        unlocked: false,
+        isNew: false
+    },
+    {
+        id: 6,
+        name: '컨텐츠 작업자의 편지 5',
+        url:'/',
+        data: '러브다이아의 2주년을 축하합니다!<br>' +
+            '<br>' +
+            '벌써 2주년이라니..<br>' +
+            '최근에는 자주 못봤지만<br>' +
+            '항상 뒤에서 응원하고 있습니다<br>' +
+            '할 말은 많은데<br>' +
+            '막상 적으려니 부끄럽네요<br>' +
+            '그러므로 이만!<br>' +
+            '<br>' +
+            '럽다 화이팅!',
+        type: 'text',
+        grade: 'SR',
+        unlocked: false,
+        isNew: false
+    },
+    {
+        id: 7,
+        name: '컨텐츠 작업자의 작품 1',
+        url:'/',
+        data: '<img src="/asset/img/럽다%202주년%20뽑기%203인.png" alt="" style="width: 100%">',
+        type: 'img',
+        grade: 'SR',
+        unlocked: false,
+        isNew: false
+    },
+    {
+        id: 8,
+        name: '컨텐츠 작업자의 작품 2',
+        url:'/',
+        data: '<img src="/asset/img/2주년%20메인%201920.png" alt="" style="width: 100%">',
+        type: 'img',
+        grade: 'SR',
+        unlocked: false,
+        isNew: false
+    },
+    {
+        id: 9,
+        name: '컨텐츠 작업자의 작품 3',
+        url:'/',
+        data: '<img src="/asset/img/2주년%20메인%201920%202.png" alt="" style="width: 100%">',
+        type: 'img',
+        grade: 'SR',
+        unlocked: false,
+        isNew: false
+    },
+    {
+        id: 10,
+        name: '어느 충직한 동부의 편지 1',
+        url:'/',
+        data: '양메이! 양메이! 양메이!<br>' +
+            '우윳빛갈양메이! 사랑해요 양메이!<br>' +
+            '언제나 오래오래 영원히! 우리곁에있어주세요!',
+        type: 'text',
+        grade: 'SR',
+        unlocked: false,
+        isNew: false
+    },
+    {
+        id: 11,
+        name: '하우스켓 님의 편지',
+        url:'/',
+        data: '러브다이아가 2주년 너무 축하드려요!!<br>' +
+            '러브다이아는 제 첫 버츄얼 외주 작업이었답니다.<br>' +
+            '<br>' +
+            '저는 정말 행운아라고 생각해요 <br>' +
+            '인지도하나 없이 무명으로 커미션 작업하던 사람을 <br>' +
+            '이만큼 성장시켜 끌어올려준건 러브다이아였어요.<br>' +
+            '<br>' +
+            '아마 러브다이아가 없었다면 지금의 저도 없었을거라고 저는 단언합니다 🙂 <br>' +
+            '<br>' +
+            '항상항상 너무 감사한 마음을 품고있습니다. <br>' +
+            '앞으로도 좋은 활동 부탁드리고 방송 정말 재밌게 보고있습니다!',
+        type: 'text',
+        grade: 'SR',
+        unlocked: false,
+        isNew: false
+    },
+    {
+        id: 12,
+        name: '컨텐츠 작업자의 작품 4',
+        url:'/',
+        data: '<img src="/asset/img/sr%20hayu.png" alt="" style="width: 100%; height: auto">',
+        type: 'img',
+        grade: 'SR',
+        unlocked: false,
+        isNew: false
+    },
+    {
+        id: 13,
+        name: '컨텐츠 작업자의 작품 5',
+        url:'/',
+        data: '<img src="/asset/img/sr%20lili.png" alt="" style="width: 100%; height: auto">',
+        type: 'img',
+        grade: 'SR',
+        unlocked: false,
+        isNew: false
+    },
 ]
 
 // SSR 등급 오브젝트
@@ -664,7 +820,8 @@ const item_ssr = [
         id: 1,
         name: '<span style="color: #ff9c00;">수퍼 초인 샤벨 토냐님의 편지</span>',
         url:'',
-        data: '하유님 메이님 리리님! 오랜만이에요!!!!<br>' +
+        data: '<img src="/asset/img/0403dac3e6b6dac9.png" style="opacity: 0.2; width: 400px; position: absolute; z-index: -1">' +
+            '<span style="">하유님 메이님 리리님! 오랜만이에요!!!!<br>' +
             '벌써 럽다도 2주년이 되었네요!<br>' +
             '시간 참 빠르죠 ㅋㅋㅋ 저도 벌써 3주년이 다가오고 있답니다....<br>' +
             '그간 플랫폼 문제도 있었고 아쉽게도 이제는 더 이상 5명이 있는 럽다가 아니게 되었지만<br>' +
@@ -674,7 +831,7 @@ const item_ssr = [
             '앞으로도 계속 오래오래 함께 활동할 수 있었으면 좋겠어요!<br>' +
             '<span style="font-weight: bold">졸업절대막아절대지켜!!!!!!</span><br>' +
             '요즘 너무 바빠서 자주 연락도 못드리고 했는데 조만간 또 같이 게임하거나 밥먹으러 가요!!!!<br>' +
-            '앞으로의 럽다도 즐겁고 행복한 일만 가득하길 진심으로 바랍니다 사랑해요!!!!!',
+            '앞으로의 럽다도 즐겁고 행복한 일만 가득하길 진심으로 바랍니다 사랑해요!!!!!</span>',
         type: 'text',
         grade: 'SSR',
         unlocked: false,

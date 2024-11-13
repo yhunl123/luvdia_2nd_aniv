@@ -96,6 +96,8 @@ export default {
         common.openModal(item.name, item.data)
       } else if (item.type === 'voice') {
         common.openModal(item.name, item.data)
+      } else if (item.type === 'img') {
+        common.openModal(item.name, item.data)
       } else if (item.type === 'video') {
         common.openModal(item.name, '<iframe src="' + item.url + '" width="1024" height="576" allow="autoplay"></iframe>')
         store.commit('setModalMuted', true)

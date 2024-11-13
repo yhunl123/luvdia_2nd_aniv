@@ -14,6 +14,7 @@
   import Modal from "@/components/Modal.vue";
   import Footer from "@/components/Footer.vue";
   import common from "@/js/common";
+  import {noticeText} from "@/object/noticeText";
 
   export default {
     name: "MainPage",
@@ -22,7 +23,6 @@
       Footer
     },
     setup() {
-
       const muted = computed(() => {
         return store.state.muted;
       })
@@ -33,6 +33,18 @@
       const popClose = () => {
         store.commit('setModalIsOpen', false)
       }
+
+      const firstCome= () => {
+        const isFirst = localStorage.getItem('isFirst') === 'N' ? 'N' : 'Y'
+
+        if (isFirst === 'Y') {
+          common.openModal('안 내 문', noticeText)
+        }
+
+        localStorage.setItem('isFirst', 'N')
+      }
+
+      firstCome()
 
       return {
         // 변수

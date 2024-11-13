@@ -128,6 +128,7 @@ export default {
 <style scoped>
 .nav-img {
   position: absolute;
+  cursor: pointer;
 }
 
 .draw-img {

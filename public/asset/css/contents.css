@@ -480,7 +480,7 @@ img.locker {
     transform: translate(-50%, -50%);
     min-width: 800px;
     min-height: 500px;
-    max-height: 800px;
+    max-height: 95%;
     background-color: rgba(238, 238, 238, 0.9);
     border-radius: 15px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
