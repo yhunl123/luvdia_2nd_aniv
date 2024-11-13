@@ -31,12 +31,6 @@ export default {
 
     const effectVideo = ref(null)
 
-    const play = () => {
-      // sound.currentSrc = 0
-      const sound = new Audio(require('@/assets/audio/086_팝.mp3'))
-      sound.play()
-    }
-
     const goResult = () => {
       router.push('/result')
     }
@@ -103,7 +97,6 @@ export default {
       effectVideo,
 
       // 메서드
-      play,
       goResult,
     }
   }

@@ -812,6 +812,16 @@ const item_sr = [
         unlocked: false,
         isNew: false
     },
+    {
+        id: 14,
+        name: '컨텐츠 작업자의 작품 5',
+        url:'/',
+        data: '<img src="/asset/img/sr%20meimei.png" alt="" style="width: 100%; height: auto">',
+        type: 'img',
+        grade: 'SR',
+        unlocked: false,
+        isNew: false
+    },
 ]
 
 // SSR 등급 오브젝트
