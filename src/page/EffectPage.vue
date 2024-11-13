@@ -36,7 +36,6 @@ export default {
     }
 
     const getItemList = () => {
-      console.log(results)
       if (results == null) {
         router.push('/draw')
         return

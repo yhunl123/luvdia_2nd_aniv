@@ -12,7 +12,7 @@
             v-if="item.grade === 'R'"
             @click="checkType(item)"
         >
-          <img class="new-item" src="../assets/img/icon/느낌표.png" alt="새 아이템" v-if="item.isNew">
+          <img class="new-item" src="../assets/img/icon/느낌표.png" alt="새 아이템" v-if="item.isNew && !hiddenNew">
           <span class="item-number" style="color: #03f0fe; -webkit-text-stroke: 1px gray;">{{item.id}}</span>
         </button>
 
@@ -23,7 +23,7 @@
             v-if="item.grade === 'SR'"
             @click="checkType(item)"
         >
-          <img class="new-item" src="../assets/img/icon/느낌표.png" alt="새 아이템" v-if="item.isNew">
+          <img class="new-item" src="../assets/img/icon/느낌표.png" alt="새 아이템" v-if="item.isNew && !hiddenNew">
           <span class="item-number" style="color: #fe0388; -webkit-text-stroke: 1px gray;">{{item.id}}</span>
         </button>
 
@@ -34,7 +34,7 @@
             v-if="item.grade === 'SSR'"
             @click="checkType(item)"
         >
-          <img class="new-item" src="../assets/img/icon/느낌표.png" alt="새 아이템" v-if="item.isNew">
+          <img class="new-item" src="../assets/img/icon/느낌표.png" alt="새 아이템" v-if="item.isNew && !hiddenNew">
           <span class="item-number" style="color: #fedf03; -webkit-text-stroke: 1px gray;">{{item.id}}</span>
         </button>
       </div>
@@ -80,6 +80,10 @@ export default {
   props: {
     item: Object,
     viewOne: {
+      type: Boolean,
+      default: false
+    },
+    hiddenNew: {
       type: Boolean,
       default: false
     }

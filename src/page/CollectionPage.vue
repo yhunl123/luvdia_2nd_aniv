@@ -7,17 +7,17 @@
       <div class="item-list">
         <span class="item-sep">R</span><hr>
         <div class="r-grade">
-          <GalleryItem v-for="item in item_r" :item="item" :key="item.id" :view-one="false"></GalleryItem>
+          <GalleryItem v-for="item in item_r" :item="item" :key="item.id" :view-one="false" :hidden-new="true"></GalleryItem>
         </div><br>
 
         <span class="item-sep">SR</span><hr>
         <div class="sr-grade">
-          <GalleryItem v-for="item in item_sr" :item="item" :key="item.id" :view-one="false"></GalleryItem>
+          <GalleryItem v-for="item in item_sr" :item="item" :key="item.id" :view-one="false" :hidden-new="true"></GalleryItem>
         </div><br>
 
         <span class="item-sep">SSR</span><hr>
         <div class="ssr-grade">
-          <GalleryItem v-for="item in item_ssr" :item="item" :key="item.id" :view-one="false"></GalleryItem>
+          <GalleryItem v-for="item in item_ssr" :item="item" :key="item.id" :view-one="false" :hidden-new="true"></GalleryItem>
         </div><br>
       </div>
     </div>

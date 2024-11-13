@@ -14,11 +14,11 @@
           :class="{'border-r': highGrade==='R', 'border-sr': highGrade==='SR', 'border-ssr': highGrade==='SSR'}"
           v-if="gCount == 10"
       >
-        <GalleryItem v-for="item in itemList" :item="item" :key="item.id" :view-one="false"></GalleryItem>
+        <GalleryItem v-for="(item, i) in itemList" :item="item" :key="i" :view-one="false"></GalleryItem>
       </div>
 
       <div class="draw-one" v-if="gCount == 1" v-for="item in itemList" :key="item.id">
-        <GalleryItem v-for="item in itemList" :item="item" :key="item.id" :view-one="true"></GalleryItem>
+        <GalleryItem v-for="(item, i) in itemList" :item="item" :key="i" :view-one="true"></GalleryItem>
       </div>
 
       <div class="mileage-wrap">
@@ -70,7 +70,7 @@ export default {
     const bgMusic = ref(null)
     const results = JSON.parse(localStorage.getItem('result'))
     const gCount = localStorage.getItem('gCount')
-
+    console.log(results)
     localStorage.removeItem('result')
 
     const itemList = ref([])
@@ -81,18 +81,16 @@ export default {
     }
 
     const getItemList = () => {
-      results.forEach((result) => {
+      results.forEach((result, index) => {
         if (result.grade === 'R') {
-          itemList.value.push(item_r.find((item) => item.id === result.id))
+          itemList.value.push(JSON.parse(JSON.stringify(item_r.find((item) => item.id === result.id))))
         } else if (result.grade === 'SR') {
-          itemList.value.push(item_sr.find((item) => item.id === result.id))
+          itemList.value.push(JSON.parse(JSON.stringify(item_sr.find((item) => item.id === result.id))))
         } else {
-          itemList.value.push(item_ssr.find((item) => item.id === result.id))
+          itemList.value.push(JSON.parse(JSON.stringify(item_ssr.find((item) => item.id === result.id))))
         }
 
-        if (result.isNew) {
-          itemList.value[itemList.value.length-1].isNew = true
-        }
+        itemList.value[index].isNew = result.isNew
       })
 
       itemList.value.map((itemOne) => {
@@ -122,6 +120,8 @@ export default {
         common.checkNewItem(item)
         common.unlockItem(item)
       })
+
+      localStorage.setItem('result', JSON.stringify(result))
 
       router.push('effect')
 
