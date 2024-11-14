@@ -35,6 +35,12 @@ const noticeText =
     '영상편지의 경우는<br>' +
     '<a href="https://drive.google.com/drive/folders/1zK5mKw3TVtyVyGbwYbZm1MPLAkmKi9v6" target="_blank">영상편지</a>에서 확인하실 수 있습니다.<br>' +
     '<br>' +
+    '메인 페이지 배경, 버튼 등 이미지는<br>' +
+    '<a href="https://x.com/miraecheese/status/1857030223826386993" target="_blank">X에서 확인하실 수 있습니다.</a><br>' +
+    '<br>' +
+    '가챠페이지 배경 이미지는<br>' +
+    '<a href="https://x.com/eeerok31/status/1856960373402079644/photo/1" target="_blank">X에서 확인하실 수 있습니다.</a><br>' +
+    '<br>' +
     '본 사이트에 대해 문의사항이 있는 경우.<br>' +
     '<a href="mailto:52latte.oe@gmail.com">52latte.oe@gmail.com</a> 으로 연락 바랍니다.<br>' +
     '</div>'
